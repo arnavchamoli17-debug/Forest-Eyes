@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DATA</title>
+  <meta name="description" content="Click anywhere on Earth: analyze satellite imagery together with terrain, rain and soil data." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛰️</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    :root {
+      --bg: #050811;
+      --surface: #0a0f1d;
+      --surface-2: #111a2e;
+      --border: rgba(255, 255, 255, 0.10);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --dim: #64748b;
+      --accent: #38bdf8;
+      --forest: #10b981;
+      --lvl-low: #22c55e;
+      --lvl-moderate: #eab308;
+      --lvl-high: #f97316;
+      --lvl-very_high: #ef4444;
+      --sans: 'Inter', -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --head: 'Outfit', var(--sans);
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body { background: var(--bg); color: var(--text); font: 14px/1.5 var(--sans); display: flex; overflow: hidden; }
+
+    #map { flex: 1; height: 100%; }
+    .leaflet-container { background: #0b1220; }
+
+    aside {
+      width: 440px; max-width: 100%; height: 100%; overflow-y: auto;
+      background: var(--surface); border-left: 1px solid var(--border);
+      padding: 18px 18px 40px;
+    }
+    h1 { font: 800 20px/1.2 var(--head); margin: 0; letter-spacing: .02em; }
+    .sub { color: var(--muted); margin: 4px 0 14px; font-size: 13px; }
+    .badge-gemma {
+      display: inline-flex; gap: 6px; align-items: center; font: 600 11px var(--mono);
+      padding: 3px 8px; border-radius: 999px; border: 1px solid rgba(56,189,248,.4); color: var(--accent);
+    }
+
+    form { display: flex; gap: 6px; margin: 12px 0 8px; }
+    input[type=search] {
+      flex: 1; background: var(--surface-2); color: var(--text); border: 1px solid var(--border);
+      border-radius: 8px; padding: 9px 11px; font: inherit;
+    }
+    button {
+      background: var(--accent); color: #04121c; border: 0; border-radius: 8px; padding: 9px 14px;
+      font: 600 13px var(--sans); cursor: pointer;
+    }
+    button:disabled { opacity: .5; cursor: wait; }
+    .presets { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .presets button { background: var(--surface-2); color: var(--muted); border: 1px solid var(--border); padding: 5px 9px; font-weight: 500; font-size: 12px; }
+    .presets button:hover { color: var(--text); }
+
+    .hint { color: var(--dim); font-size: 13px; border: 1px dashed var(--border); border-radius: 10px; padding: 14px; }
+
+    .card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 14px; margin-top: 12px; }
+    .card h2 { font: 700 12px var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+    .headline { font: 600 16px/1.35 var(--head); margin: 6px 0 0; }
+    .lvl { display: inline-block; font: 700 11px var(--mono); text-transform: uppercase; padding: 2px 8px; border-radius: 6px; color: #0b0b0b; }
+    .lvl.low { background: var(--lvl-low); } .lvl.moderate { background: var(--lvl-moderate); }
+    .lvl.high { background: var(--lvl-high); } .lvl.very_high { background: var(--lvl-very_high); color: #fff; }
+
+    .hz { border-top: 1px solid var(--border); padding: 10px 0 2px; }
+    .hz:first-of-type { border-top: 0; padding-top: 0; }
+    .hz-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .hz-name { font-weight: 600; text-transform: capitalize; }
+    .hz p { margin: 6px 0 0; color: var(--muted); font-size: 13px; }
+    .hz b { color: var(--text); font-weight: 600; }
+    .conf { color: var(--dim); font: 11px var(--mono); }
+
+    ul { margin: 0; padding-left: 18px; } li { margin: 3px 0; }
+    .meta { color: var(--dim); font: 11px/1.5 var(--mono); margin-top: 10px; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+    td { padding: 4px 0; vertical-align: top; border-bottom: 1px solid rgba(255,255,255,.05); }
+    td:first-child { color: var(--muted); padding-right: 10px; white-space: nowrap; }
+    td:last-child { text-align: right; font-family: var(--mono); }
+    .src { color: var(--dim); font-size: 11px; margin: 2px 0 10px; }
+
+    .loading { display: flex; gap: 10px; align-items: center; color: var(--muted); }
+    .spinner { width: 16px; height: 16px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .err { color: #fca5a5; }
+    .view-switch { display: flex; background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 3px; gap: 3px; margin-top: 4px; }
+    .view-switch[hidden] { display: none; }
+    .view-switch button { flex: 1; background: transparent; color: var(--muted); padding: 7px; font-weight: 600; }
+    .view-switch button[aria-selected="true"] { background: var(--accent); color: #04121c; }
+    #out.data-only .reading-card { display: none; }
+    .source-tag { display: inline-flex; align-items: center; gap: 6px; font: 600 11px var(--mono); padding: 3px 8px; border-radius: 6px; margin-bottom: 8px; }
+    .source-tag.gemma { color: var(--accent); background: rgba(56,189,248,.12); }
+    .source-tag.backup { color: #94a3b8; background: rgba(148,163,184,.12); }
+    .source-tag.rules { color: #94a3b8; background: rgba(148,163,184,.12); }
+    .retry { margin-top: 10px; background: transparent; color: var(--accent); border: 1px solid rgba(56,189,248,.5); padding: 6px 10px; }
+    .err a { color: var(--accent); } .err code { font-family: var(--mono); color: var(--text); }
+    .card-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .card-top h2 { margin: 0; }
+    .pdf-btn { background: transparent; color: var(--accent); border: 1px solid rgba(56,189,248,.5); padding: 5px 10px; font-size: 12px; white-space: nowrap; }
+
+    @media (max-width: 760px) {
+      body { flex-direction: column; overflow: auto; }
+      #map { height: 45vh; flex: none; }
+      aside { width: 100%; height: auto; border-left: 0; border-top: 1px solid var(--border); padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="map" role="application" aria-label="World map: click a place to assess it"></div>
+
+  <aside>
+    <h1>🛰️ DATA</h1>
+    <p class="sub">Click anywhere on Earth. Satellite imagery is analyzed together with terrain, rain and soil data to evaluate natural hazards.</p>
+    <span class="badge-gemma">✦ AI Powered</span>
+
+    <form id="search">
+      <input type="search" id="q" placeholder="Search a place (e.g. Joshimath)" aria-label="Search a place" />
+      <button type="submit">Go</button>
+    </form>
+    <div class="presets" id="presets"></div>
+
+    <div class="view-switch" id="view-switch" role="tablist" aria-label="What to show" hidden>
+      <button type="button" role="tab" data-view="reading" aria-selected="true">✦ Reading</button>
+      <button type="button" role="tab" data-view="data" aria-selected="false">📊 Data only</button>
+    </div>
+    <div id="out"><div class="hint">👆 Pick a demo place above, search, or click the map.</div></div>
+
+  </aside>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    'use strict';
+    // Preset demo places
+    const PRESETS = {
+      forest: [
+        { name: 'Lábrea, Amazonas (Brazil)', lat: -7.6, lon: -64.6 },
+        { name: 'Novo Progresso, Pará (Brazil)', lat: -7.1, lon: -55.4 },
+        { name: 'Porto Velho, Rondônia (Brazil)', lat: -9.2, lon: -64.4 },
+        { name: 'São Félix do Xingu, Pará (Brazil)', lat: -6.6, lon: -52.3 },
+        { name: 'Riau, Sumatra (Indonesia)', lat: -0.2, lon: 101.95 },
+      ],
+    };
+    let mode = 'forest';
+
+    const map = L.map('map', { worldCopyJump: true, zoomControl: false }).setView([25, 20], 3);
+    L.control.zoom({ position: 'bottomleft' }).addTo(map);
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 18, attribution: 'Imagery © Esri, Maxar, Earthstar Geographics',
+    }).addTo(map);
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 18, opacity: 0.8,
+    }).addTo(map);
+    const layer = L.layerGroup().addTo(map);
+
+    const out = document.getElementById('out');
+    const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    // Plain text: the HTML table escapes it, the PDF uses it as is
+    const fmt = (v, unit = '') => (v === null || v === undefined ? '—' : `${typeof v === 'number' ? v.toLocaleString() : v}${unit}`);
+    const HAZARD_NAMES = {
+      flood: '🌊 Flood', landslide: '⛰️ Landslide', debris_flow: '🪨 Debris flow', erosion_sediment: '🟫 Erosion & sediment',
+      deforestation: '🌳 Deforestation', drought_low_flow: '☀️ Drought / low flow', glacial: '🧊 Glacial', other: '⚠️ Other',
+    };
+    const levelText = l => esc(String(l || '').replace('_', ' '));
+
+    function showPresets() {
+      document.getElementById('presets').replaceChildren(...PRESETS[mode].map(p => {
+        const b = document.createElement('button');
+        b.type = 'button'; b.textContent = p.name;
+        b.onclick = () => assess(p.lat, p.lon, p.name);
+        return b;
+      }));
+    }
+    showPresets();
+    // The main app tells us when the user switches Forest / River
+    window.addEventListener('message', e => {
+      if (e.origin !== location.origin || e.data?.type !== 'hazard-mode') return;
+      if (e.data.mode !== mode && PRESETS[e.data.mode]) { mode = e.data.mode; showPresets(); }
+    });
+
+    // Inside the main app's overlay: let Esc close it.
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && window.parent !== window) window.parent.postMessage({ type: 'close-hazard-lens' }, location.origin);
+    });
+
+    map.on('click', e => assess(e.latlng.lat, ((e.latlng.lng + 540) % 360) - 180));
+
+    document.getElementById('search').addEventListener('submit', async e => {
+      e.preventDefault();
+      const q = document.getElementById('q').value.trim();
+      if (!q) return;
+      try {
+        const r = await fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(q)}`);
+        const [hit] = await r.json();
+        if (!hit) { out.innerHTML = `<div class="card err">No place found for “${esc(q)}”.</div>`; return; }
+        assess(+hit.lat, +hit.lon, hit.display_name.split(',').slice(0, 2).join(','));
+      } catch { out.innerHTML = '<div class="card err">Search is unavailable right now. Click the map instead.</div>'; }
+    });
+
+    // The API lives in our Node server: opening this file directly (file://, Live Server…) can't reach it.
+    const SERVER_HINT = location.protocol === 'file:'
+      ? 'The DATA service needs the project server: in the project folder run <code>npm start</code>, then open <a href="http://localhost:8080/" target="_top">http://localhost:8080</a>.'
+      : 'The server did not answer. Wait a moment and try again (a sleeping free server can take about a minute to wake up).';
+    if (location.protocol === 'file:') {
+      out.innerHTML = `<div class="card err">⚠️ This page was opened as a file. ${SERVER_HINT}</div>`;
+    }
+
+    let busy = false;
+    let lastPlace = null;
+    let view = 'reading';
+    const viewSwitch = document.getElementById('view-switch');
+    viewSwitch.addEventListener('click', e => {
+      const b = e.target.closest('button[data-view]');
+      if (!b) return;
+      view = b.dataset.view;
+      viewSwitch.querySelectorAll('button').forEach(x => x.setAttribute('aria-selected', String(x === b)));
+      out.classList.toggle('data-only', view === 'data');
+    });
+
+    async function assess(lat, lon, name) {
+      lastPlace = { lat, lon, name };
+      if (busy) return;
+      if (location.protocol === 'file:') {
+        out.innerHTML = `<div class="card err">⚠️ This page was opened as a file. ${SERVER_HINT}</div>`;
+        return;
+      }
+      busy = true;
+      document.querySelectorAll('button').forEach(b => (b.disabled = true));
+      layer.clearLayers();
+      L.circleMarker([lat, lon], { radius: 7, color: '#fff', weight: 2, fillColor: '#38bdf8', fillOpacity: 1 }).addTo(layer);
+      map.flyTo([lat, lon], Math.max(map.getZoom(), 11), { duration: 1.2 });
+
+      const steps = ['Fetching satellite image…', 'Reading terrain, rain and soil data…', 'Analyzing imagery and environmental data…', 'AI is reading the image and data…', 'Generating assessment report…'];
+      let s = 0;
+      out.innerHTML = `<div class="card loading"><div class="spinner"></div><span id="step">${steps[0]}</span></div>`;
+      const timer = setInterval(() => { s = Math.min(s + 1, steps.length - 1); const el = document.getElementById('step'); if (el) el.textContent = steps[s]; }, 6000);
+
+      try {
+        const res = await fetch('/api/v1/hazard', {
+          method: 'POST', headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ lat, lon, name, focus: mode }), signal: AbortSignal.timeout(150000),
+        });
+        const r = await res.json().catch(() => {
+          throw new Error(res.status === 404 || res.status === 405
+            ? `this server has no DATA API (HTTP ${res.status}). Restart it with the latest code.`
+            : `the server sent an unexpected reply (HTTP ${res.status}).`);
+        });
+        if (!res.ok) throw new Error(r.error || `HTTP ${res.status}`);
+        draw(r);
+      } catch (err) {
+        const msg = err.name === 'TimeoutError'
+          ? 'the server took longer than 2.5 minutes. Try again.'
+          : /failed to fetch|networkerror|load failed/i.test(err.message)
+            ? `could not reach the server. Is it still running? ${SERVER_HINT}`
+            : esc(err.message);
+        out.innerHTML = `<div class="card err">Could not assess this place: ${msg}</div>`;
+      } finally {
+        clearInterval(timer);
+        busy = false;
+        document.querySelectorAll('button').forEach(b => (b.disabled = false));
+      }
+    }
+
+    function draw(r) {
+      if (r.image?.bbox) {
+        const [w, s, e, n] = r.image.bbox;
+        L.rectangle([[s, w], [n, e]], { color: '#38bdf8', weight: 1, fill: false, dashArray: '4 4' }).bindTooltip('Area analyzed').addTo(layer);
+      }
+      if (r.riverPath?.length > 1) {
+        L.polyline(r.riverPath, { color: '#22d3ee', weight: 4, opacity: 0.9 })
+          .bindTooltip('River downstream (300 km, HydroRIVERS)').addTo(layer);
+      }
+
+      let html = '';
+
+      const a = r.reading;
+      const SOURCE = {
+        gemma: `<span class="source-tag gemma">✦ AI reading · ${esc(r.model)} via ${r.provider === 'bedrock' ? 'Amazon Bedrock' : 'Google AI Studio'}</span>`,
+        backup: `<span class="source-tag backup">✦ AI reading</span>`,
+        rules: `<span class="source-tag rules">Reading from the data</span>`,
+      };
+      html += `<div class="card reading-card">
+        ${SOURCE[r.readingSource] || ''}
+        <h2>${esc(r.place)}</h2>
+        <span class="lvl ${esc(a.overall_level)}">Overall: ${levelText(a.overall_level)}</span>
+        <p class="headline">${esc(a.headline)}</p>
+        <div class="meta">${(r.tookMs / 1000).toFixed(0)} s${r.aiError ? ` · AI error: ${esc(r.aiError)}` : ''}</div>
+        ${r.readingSource !== 'gemma' ? '<button type="button" class="retry" id="retry">↻ Retry AI Assessment</button>' : ''}
+      </div>`;
+      if (a.hazards.length) {
+        html += `<div class="card reading-card"><h2>Hazards</h2>${a.hazards.map(h => `
+          <div class="hz">
+            <div class="hz-top"><span class="hz-name">${HAZARD_NAMES[h.type] || esc(h.type)}</span><span class="lvl ${esc(h.level)}">${levelText(h.level)}</span></div>
+            <p><b>Seen in image:</b> ${esc(h.evidence_image)}</p>
+            <p><b>Data:</b> ${esc(h.evidence_data)}</p>
+            <div class="conf">confidence: ${esc(h.confidence)}</div>
+          </div>`).join('')}</div>`;
+      }
+      if (a.image_observations.length) html += `<div class="card reading-card"><h2>What the AI sees in the image</h2><ul>${a.image_observations.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>`;
+      if (a.actions.length) html += `<div class="card reading-card"><h2>Suggested next steps</h2><ul>${a.actions.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>`;
+      if (a.data_gaps.length) html += `<div class="card reading-card"><h2>Uncertain / check on the ground</h2><ul>${a.data_gaps.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>`;
+
+      html += `<div class="card"><div class="card-top"><h2>The data behind the reading</h2>
+        <button type="button" class="pdf-btn" id="pdf">⬇ Download PDF</button></div><table>`;
+      html += dataRows(r).map(([label, value, sub]) => `<tr><td>${sub ? '&nbsp;&nbsp;' : ''}${esc(label)}</td><td>${esc(value)}</td></tr>`).join('');
+      html += '</table>';
+      html += `<div class="src">${dataSources(r).map(esc).join(' · ')}</div>`;
+      if (r.missing?.length) html += `<div class="src">Not available this time: ${r.missing.map(esc).join(', ')}</div>`;
+      html += '</div>';
+
+      out.innerHTML = html;
+      viewSwitch.hidden = false;
+      document.getElementById('retry')?.addEventListener('click', () => lastPlace && assess(lastPlace.lat, lastPlace.lon, lastPlace.name));
+      document.getElementById('pdf').addEventListener('click', e => downloadPdf(r, e.currentTarget));
+    }
+
+    // [label, value, isSubRow] for the data table, shared by the page and the PDF
+    function dataRows(r) {
+      const d = r.data || {};
+      const t = d.terrain, rain = d.rainfall, f = d.river_flow_forecast, rv = d.nearest_river, tl = d.tree_cover_loss;
+      const rows = [];
+      if (f) rows.push(
+        ['River flow today', fmt(f.today_cms, ' m³/s')],
+        ['14-day forecast peak', `${fmt(f.forecast_peak_14d_cms, ' m³/s')} (${f.forecast_peak_date ?? '—'})`],
+        ['≈ 2-year flood level', fmt(f.approx_2yr_flood_cms, ' m³/s')],
+        ['Peak ÷ 2-year flood', fmt(f.peak_vs_2yr_flood)]);
+      if (rv && rv.mean_discharge_cms !== undefined) rows.push(
+        ['Nearest major river', fmt(rv.distance_km, ' km away')],
+        ['Long-term mean flow', fmt(rv.mean_discharge_cms, ' m³/s')],
+        ['Upstream catchment', fmt(rv.upstream_area_km2, ' km²')],
+        ['Distance to sea / sink', fmt(rv.distance_to_mouth_km, ' km')]);
+      if (t) rows.push(
+        ['Elevation', fmt(t.elevation_m, ' m')],
+        ['Relief within 1 km', fmt(t.relief_within_1km_m, ' m')],
+        ['Steepest slope (~1 km)', fmt(t.max_slope_deg, '°')]);
+      if (rain) rows.push(
+        ['Rain, past 7 days', fmt(rain.past_7_days_mm, ' mm')],
+        ['Rain, next 3 days', fmt(rain.next_3_days_mm, ' mm')]);
+      if (tl) {
+        rows.push([`Forest loss 2021-24 (~${tl.area_km2} km²)`, fmt(tl.total_2021_2024_ha, ' ha')]);
+        for (const [y, v] of Object.entries(tl.natural_forest_loss_ha_by_year || {})) rows.push([y, fmt(v, ' ha'), true]);
+      }
+      return rows;
+    }
+    function dataSources(r) {
+      const d = r.data || {};
+      return [r.image?.source, d.river_flow_forecast?.source, d.nearest_river?.source, d.terrain?.source,
+        d.rainfall?.source, d.soil?.source, d.tree_cover_loss?.source].filter(Boolean);
+    }
+
+    // jsPDF is only fetched the first time someone asks for a PDF
+    const loadScript = src => new Promise((ok, fail) => {
+      const s = document.createElement('script');
+      s.src = src; s.onload = ok; s.onerror = () => fail(new Error(`could not load ${src}`));
+      document.head.append(s);
+    });
+    let pdfLib = null;
+    const loadPdfLib = () => (pdfLib ??= loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js')
+      .then(() => loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js'))
+      .catch(err => { pdfLib = null; throw err; }));
+
+    // jsPDF's built-in fonts only cover Latin-1: swap the few symbols we use, drop the rest (emoji, non-Latin scripts)
+    const pdfText = s => String(s ?? '').replace(/≈/g, '~').replace(/÷/g, '/').replace(/[–—]/g, '-')
+      .replace(/[^\x20-\x7e\xa0-\xff]/g, '').trim();
+
+    async function downloadPdf(r, btn) {
+      btn.disabled = true; btn.textContent = 'Preparing…';
+      try {
+        await loadPdfLib();
+        const doc = new window.jspdf.jsPDF({ unit: 'pt', format: 'a4' });
+        const W = doc.internal.pageSize.getWidth(), H = doc.internal.pageSize.getHeight(), M = 40;
+        let y = M;
+        const line = (text, size = 10, style = 'normal', color = 40) => {
+          doc.setFont('helvetica', style); doc.setFontSize(size); doc.setTextColor(color);
+          const lines = doc.splitTextToSize(pdfText(text), W - 2 * M);
+          if (y + lines.length * size * 1.3 > H - M) { doc.addPage(); y = M; }
+          doc.text(lines, M, y);
+          y += lines.length * size * 1.3;
+        };
+
+        line('DATA - site data', 18, 'bold', 20);
+        line(r.place, 12, 'bold');
+        line(`Lat ${r.lat.toFixed(4)}, Lon ${r.lon.toFixed(4)}  ·  Generated ${new Date().toLocaleString()}`, 9, 'normal', 110);
+        if (r.image?.bbox) line(`Area analysed (W, S, E, N): ${r.image.bbox.map(v => v.toFixed(3)).join(', ')}`, 9, 'normal', 110);
+        y += 8;
+
+        doc.autoTable({
+          startY: y, margin: { left: M, right: M },
+          head: [['Measure', 'Value']],
+          body: dataRows(r).map(([label, value, sub]) => [(sub ? '    ' : '') + pdfText(label), pdfText(value)]),
+          styles: { font: 'helvetica', fontSize: 9.5, cellPadding: 4 },
+          headStyles: { fillColor: [17, 26, 46] },
+          columnStyles: { 1: { halign: 'right' } },
+        });
+        y = doc.lastAutoTable.finalY + 16;
+
+        if (r.data?.soil?.summary) { line('Soil', 11, 'bold'); line(r.data.soil.summary, 9); y += 6; }
+        if (r.missing?.length) { line(`Not available this time: ${r.missing.join(', ')}`, 9, 'italic', 110); y += 6; }
+        line('Sources', 11, 'bold');
+        line(dataSources(r).join('; '), 8.5, 'normal', 90);
+        y += 6;
+        line('Screening estimates only - not an engineering or official hazard assessment.', 8.5, 'italic', 110);
+
+        const slug = pdfText(r.place).normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'place';
+        doc.save(`hazard-lens-${slug}-${new Date().toISOString().slice(0, 10)}.pdf`);
+        btn.textContent = '⬇ Download PDF';
+      } catch (err) {
+        btn.textContent = 'PDF failed - retry';
+        console.error('[hazard pdf]', err);
+      } finally {
+        btn.disabled = false;
+      }
+    }
+  </script>
+</body>
+</html>

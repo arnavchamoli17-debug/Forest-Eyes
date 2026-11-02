@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forest Eyes — Deforestation Intelligence Platform</title>
+  <meta name="description" content="Real-time deforestation tracking and global warming analysis. Analyze any location on Earth." />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="map"></div>
+  <header class="header">
+    <div class="header-brand">
+      <div class="brand-icon">🌳</div>
+      <div class="brand-text">
+        <h1>Forest Eyes</h1>
+        <span>Deforestation Intelligence Platform</span>
+      </div>
+    </div>
+    <div class="header-status">
+      <div class="status-dot" id="status-dot"></div>
+      <span id="status-text">Ready to Analyze</span>
+    </div>
+  </header>
+  <aside class="panel panel-left" id="control-panel">
+    <div class="panel-section">
+      <h2 class="panel-title">📍 Location Input</h2>
+      <div class="input-group">
+        <label for="location-search">Search by Name</label>
+        <div class="search-row">
+          <input type="text" id="location-search" placeholder="e.g. Amazon Rainforest, Brazil" autocomplete="off" />
+          <button class="btn-icon" id="search-btn" title="Search">🔍</button>
+        </div>
+        <div class="search-suggestions hidden" id="search-suggestions" role="listbox"></div>
+      </div>
+      <div class="divider"><span>or enter coordinates</span></div>
+      <div class="coords-row" style="align-items: flex-end; gap: 8px;">
+        <div class="input-group" style="margin-bottom: 0;">
+          <label for="lat-input">Latitude</label>
+          <div class="prefix-input">
+            <span class="prefix" id="lat-prefix">S</span>
+            <input type="number" id="lat-input" placeholder="e.g. -3.4653" step="any" min="-90" max="90" />
+          </div>
+        </div>
+        <div class="input-group" style="margin-bottom: 0;">
+          <label for="lng-input">Longitude</label>
+          <div class="prefix-input">
+            <span class="prefix" id="lng-prefix">W</span>
+            <input type="number" id="lng-input" placeholder="e.g. -62.2159" step="any" min="-180" max="180" />
+          </div>
+        </div>
+        <button class="btn-icon" id="coords-search-btn" title="Search Coordinates" style="height: 38px;">🔍</button>
+      </div>
+      <div class="input-group">
+        <label for="radius-input">Analysis Radius (km)</label>
+        <input type="range" id="radius-input" min="1" max="50" value="10" />
+        <div class="range-label">
+          <span>1 km</span>
+          <span id="radius-display" class="range-value">10 km</span>
+          <span>50 km</span>
+        </div>
+      </div>
+      <button class="btn-primary" id="analyze-btn">
+        <span class="btn-icon-left">🛰️</span>
+        Analyze Deforestation
+      </button>
+      <!-- [tree-planner] which trees suit the searched place: water, soil, sunlight, air, climate (tree-planner.js) -->
+      <button type="button" class="btn-plant" id="plant-btn" aria-haspopup="dialog" aria-expanded="false">
+        <span class="btn-icon-left">🌱</span>
+        Which Trees Can Grow Here?
+      </button>
+      <div class="data-source-toggle" hidden style="display: none;"><!-- hidden: live data is always used; the radios stay so app.js can read the mode -->
+        <div class="data-source-label">📡 Data Source</div>
+        <div class="toggle-group">
+          <label class="toggle-option">
+            <input type="radio" name="data-source" id="toggle-real-api" value="real" checked />
+            <span class="toggle-option-label">
+              <span class="toggle-dot real"></span>
+              GFW API
+            </span>
+          </label>
+          <label class="toggle-option" style="display: none;">
+            <input type="radio" name="data-source" id="toggle-simulate" value="simulate" />
+            <span class="toggle-option-label">
+              <span class="toggle-dot simulate"></span>
+              Simulate
+            </span>
+          </label>
+        </div>
+        <div class="data-source-hint" id="data-source-hint" style="color: rgba(0, 230, 118, 0.5);">Using live GFW API with authentication</div>
+      </div>
+      <!-- [treeko] chat assistant button; its picture follows the latest analysis (treeko.js) -->
+      <button type="button" class="treeko-pill" id="treeko-btn" data-mood="low" aria-label="Open Treeko chat assistant">
+        <span class="treeko-avatar" aria-hidden="true">
+          <img src="assets/treeko/treeko-low.png" data-mood="low" alt="" />
+          <img src="assets/treeko/treeko-moderate.png" data-mood="moderate" alt="" />
+          <img src="assets/treeko/treeko-high.png" data-mood="high" alt="" />
+        </span>
+        <span class="treeko-name">Treeko</span>
+      </button>
+    </div>
+
+  </aside>
+  <aside class="panel panel-right" id="results-panel">
+    <div class="panel-section" id="deforestation-section">
+      <h2 class="panel-title">🌲 Deforestation Analysis</h2>
+      <div class="result-placeholder" id="result-placeholder">
+        <div class="placeholder-icon">🛰️</div>
+        <p>Enter a location and click <strong>Analyze</strong> to see satellite-based deforestation data.</p>
+      </div>
+      <div class="result-content hidden" id="result-content">
+        <div class="location-label" id="result-location-name"></div>
+        <div class="api-updated" id="api-updated">Data updated: waiting for API response</div>
+        <div class="severity-card" id="severity-card">
+          <div class="severity-icon" id="severity-icon"></div>
+          <div class="severity-info">
+            <div class="severity-level" id="severity-level"></div>
+            <div class="severity-desc" id="severity-desc"></div>
+          </div>
+        </div>
+        <!-- annual deforestation rate behind the rating (app.js renderSeverityRate) -->
+        <div class="severity-rate" id="severity-rate"></div>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value" id="stat-ha">—</div>
+            <div class="stat-label">Hectares Lost</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value" id="stat-co2">—</div>
+            <div class="stat-label">CO₂ Emitted (MgCO₂e)</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value" id="stat-years">—</div>
+            <div class="stat-label">Years Analyzed</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value" id="stat-trees">—</div>
+            <div class="stat-label">Trees to Plant</div>
+          </div>
+        </div>
+        <div class="chart-section">
+          <div class="chart-title">Annual Tree Cover Loss (ha)</div>
+          <div class="bar-chart" id="bar-chart"></div>
+        </div>
+        <div class="planting-card" id="planting-card">
+          <div class="planting-icon">🌱</div>
+          <div class="planting-text">
+            <strong id="planting-number"></strong> trees should be planted to re-absorb this area's forest-loss CO₂ within ~40 years (60 % seedling survival) or replant the cleared land, whichever is larger.
+          </div>
+        </div>
+      </div>
+      <div class="loading-state hidden" id="loading-state">
+        <div class="spinner"></div>
+        <div class="loading-steps">
+          <div class="loading-step" id="step-1">🛰️ Generating area polygon...</div>
+          <div class="loading-step" id="step-2">📡 Submitting to analytics engine...</div>
+          <div class="loading-step" id="step-3">⏳ Processing satellite data...</div>
+          <div class="loading-step" id="step-4">✅ Formatting results...</div>
+        </div>
+      </div>
+      <div class="error-state hidden" id="error-state">
+        <div class="error-icon">⚠️</div>
+        <div class="error-message" id="error-message"></div>
+        <button class="btn-secondary" id="retry-btn">Try Again</button>
+      </div>
+    </div>
+    <div class="panel-section" id="climate-section">
+      <h2 class="panel-title">🌡️ Autonomous Climate Engine</h2>
+      <p class="section-subtitle">Real-time environmental indicators at analyzed location</p>
+      <div class="climate-placeholder" id="climate-placeholder"><p>Climate data will appear after analysis.</p></div>
+      <div class="climate-content hidden" id="climate-content">
+        <div class="climate-grid">
+          <div class="climate-card">
+            <div class="climate-icon">🌡️</div>
+            <div class="climate-value" id="cv-temp">—</div>
+            <div class="climate-label">Temperature (°C)</div>
+            <div class="climate-bar"><div class="climate-bar-fill" id="cb-temp"></div></div>
+          </div>
+          <div class="climate-card">
+            <div class="climate-icon">💧</div>
+            <div class="climate-value" id="cv-humidity">—</div>
+            <div class="climate-label">Humidity (%)</div>
+            <div class="climate-bar"><div class="climate-bar-fill" id="cb-humidity"></div></div>
+          </div>
+          <div class="climate-card">
+            <div class="climate-icon">🌧️</div>
+            <div class="climate-value" id="cv-precip">—</div>
+            <div class="climate-label">Precipitation (mm)</div>
+            <div class="climate-bar"><div class="climate-bar-fill" id="cb-precip"></div></div>
+          </div>
+          <div class="climate-card">
+            <div class="climate-icon">💨</div>
+            <div class="climate-value" id="cv-wind">—</div>
+            <div class="climate-label">Wind Speed (km/h)</div>
+            <div class="climate-bar"><div class="climate-bar-fill" id="cb-wind"></div></div>
+          </div>
+        </div>
+        <div class="global-warming-indicator">
+          <div class="gw-title">🌍 Global Warming Risk at this Location</div>
+          <div class="gw-gauge"><div class="gw-gauge-fill" id="gw-gauge-fill"></div></div>
+          <div class="gw-label" id="gw-label"></div>
+          <div class="gw-description" id="gw-description"></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+    <!-- Layer Controls -->
+  <div class="layer-controls" id="layer-controls">
+    <div class="layer-toggle-title">🗺️ Map Layers</div>
+    <label class="layer-toggle">
+      <input type="checkbox" id="toggle-satellite" checked />
+      <span class="toggle-slider"></span>
+      <span class="toggle-label">🛰️ Satellite</span>
+    </label>
+    <label class="layer-toggle">
+      <input type="checkbox" id="toggle-tree-cover" checked />
+      <span class="toggle-slider"></span>
+      <span class="toggle-label">🌲 Tree Cover</span>
+    </label>
+    <label class="layer-toggle">
+      <input type="checkbox" id="toggle-tree-loss" checked />
+      <span class="toggle-slider"></span>
+      <span class="toggle-label">🔴 Tree Loss</span>
+    </label>
+    <div class="layer-select-control" title="Choose how tree loss is drawn.">
+      <label for="tree-loss-mode">Tree Loss Form</label>
+      <select id="tree-loss-mode">
+        <option value="dots">Dot form</option>
+        <option value="color">Colour form</option>
+        <option value="heatmap">Heatmap</option>
+        <option value="replay">Year replay (2001–2024)</option>
+      </select>
+    </div>
+    <label class="layer-toggle">
+      <input type="checkbox" id="toggle-glad" />
+      <span class="toggle-slider"></span>
+      <span class="toggle-label">⚠️ GLAD Alerts</span>
+    </label>
+    <!-- [globe-zoom] hidden: zooming out of the world view opens the 3D Earth; globe-zoom.js drives this switch -->
+    <label class="layer-toggle hidden" title="Switch from the flat map to an interactive 3D model of Earth.">
+      <input type="checkbox" id="toggle-globe" />
+      <span class="toggle-slider"></span>
+      <span class="toggle-label">🌍 3D Earth</span>
+    </label>
+  </div>
+  <div id="globe-container" class="hidden" aria-label="Interactive 3D Earth view"></div>
+  <div id="globe-controls" class="globe-controls hidden" aria-label="3D Earth controls">
+    <button type="button" id="globe-zoom-out" class="globe-control-btn" title="Zoom out" aria-label="Zoom out">−</button>
+    <button type="button" id="globe-zoom-in" class="globe-control-btn" title="Zoom in" aria-label="Zoom in">+</button>
+    <button type="button" id="globe-spin" class="globe-control-btn" title="Toggle spin" aria-label="Toggle spin" aria-pressed="true">↻</button>
+    <button type="button" id="globe-reset" class="globe-control-btn" title="Reset Earth view" aria-label="Reset Earth view">⌂</button>
+  </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="app.js"></script>
+  <script src="heatmap.js"></script>
+  <script src="loss-replay.js"></script>
+  <script src="globe-transition.js"></script>
+  <script src="globe-layers.js"></script>
+  <script src="globe-imagery.js"></script>
+  <script src="globe-zoom.js"></script>
+  <script src="treeko.js"></script>
+  <script src="ai-guard.js"></script>
+  <script src="treeko-brain.js"></script>
+  <script src="treeko-chat.js"></script>
+  <script src="tree-fit.js"></script>
+  <script src="tree-planner.js"></script>
+
+  </body>
+</html>
+
+
