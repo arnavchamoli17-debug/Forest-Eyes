@@ -1,0 +1,60 @@
+place,time_utc,magnitude,mag_type,lat,lon,depth_km,usgs_place,usgs_event_id
+joshimath,2026-10-06T16:53:12.231Z,5.1,mb,30.0423,79.5468,16.528,"31 km NW of Bāgeshwar, India",us6000u0hz
+joshimath,2026-09-03T08:16:36.404Z,5.1,mb,31.3933,80.3486,10,"119 km NE of Joshīmath, India",us7000tdv4
+joshimath,2017-12-06T15:19:49.970Z,5.1,mb,30.6339,79.1601,10,"34 km NW of P?palkoti, India",us1000bmru
+joshimath,2017-02-06T17:03:06.530Z,5.1,mwb,30.6544,79.1645,16.05,"36 km NW of P?palkoti, India",us20008hyg
+joshimath,2016-12-01T16:52:50.110Z,5.2,mb,29.979,80.6321,31.96,"18 km NE of Dh?rchula, India",us10007e1x
+joshimath,2012-02-09T19:17:30.550Z,5.1,mb,30.986,78.282,6.2,"20 km NNE of Barkot, India",usp000jerg
+joshimath,2011-04-04T11:31:43.050Z,5.3,mwb,29.698,80.754,26.1,"24 km SE of D?rchul?, Nepal",usp000hz8k
+joshimath,2010-07-06T19:08:25.870Z,5,mwc,29.841,80.397,32.8,"11 km W of Dh?rchula, India",usp000hez9
+joshimath,2010-06-22T23:14:10.840Z,5.2,mb,29.872,80.428,16.3,"9 km WNW of Dh?rchula, India",usp000hed7
+joshimath,2009-09-21T09:43:50.990Z,5,mb,30.879,79.057,52.3,"Uttaranchal, India",usp000h1r8
+joshimath,2008-09-04T12:53:11.290Z,5,mwc,30.279,80.349,10,"50 km NNW of Dh?rchula, India",usp000ggda
+joshimath,2007-07-22T23:02:14.790Z,5.1,mb,30.881,78.239,19,"Uttaranchal, India",usp000fgwd
+joshimath,2005-12-14T07:09:54.190Z,5.1,mwc,30.476,79.255,44,"17 km WNW of P?palkoti, India",usp000e647
+joshimath,1999-04-06T19:37:24.050Z,5.1,mb,30.414,79.321,10,"10 km W of P?palkoti, India",usp00095ws
+joshimath,1999-03-30T21:02:10.340Z,5.3,mb,30.376,79.335,10,"10 km WSW of P?palkoti, India",usp00095gs
+joshimath,1999-03-28T19:36:05.510Z,5.4,mb,30.315,79.387,10,"12 km SSW of P?palkoti, India",usp00095cg
+joshimath,1999-03-28T19:05:11.030Z,6.6,mwb,30.512,79.403,15,"9 km NNW of P?palkoti, India",usp00095cb
+joshimath,1997-01-05T08:47:25.400Z,5.6,mwc,29.845,80.532,33,"1 km E of Dh?rchula, India",usp0007vgp
+joshimath,1991-10-19T21:23:14.300Z,6.8,mwb,30.78,78.774,10.3,"32 km E of Uttark?shi, India",usp0004y1r
+joshimath,1990-09-21T16:08:20.750Z,5.1,mb,29.741,79.791,33,"10 km S of B?geshwar, India",usp0004exz
+joshimath,1984-03-23T00:34:08.720Z,5.1,mb,29.99,78.871,33,"20 km SSE of Pauri, India",usp00022wk
+joshimath,1984-02-19T15:46:25.770Z,5,mb,29.867,80.546,21.4,"3 km NE of Dh?rchula, India",usp000223q
+joshimath,1979-12-28T01:59:18.800Z,5,mb,30.628,78.445,33,"11 km S of Uttark?shi, India",usp00014ra
+joshimath,1979-05-20T22:59:14.200Z,5.9,ms,30.029,80.31,33,western Xizang-India border region,usp00010s6
+uttarkashi,2026-10-06T16:53:12.231Z,5.1,mb,30.0423,79.5468,16.528,"31 km NW of Bāgeshwar, India",us6000u0hz
+uttarkashi,2017-12-06T15:19:49.970Z,5.1,mb,30.6339,79.1601,10,"34 km NW of P?palkoti, India",us1000bmru
+uttarkashi,2017-02-06T17:03:06.530Z,5.1,mwb,30.6544,79.1645,16.05,"36 km NW of P?palkoti, India",us20008hyg
+uttarkashi,2012-02-09T19:17:30.550Z,5.1,mb,30.986,78.282,6.2,"20 km NNE of Barkot, India",usp000jerg
+uttarkashi,2010-05-28T07:25:02.580Z,5,mb,31.135,77.839,18.8,"10 km SE of Rohru, India",usp000hd9n
+uttarkashi,2009-09-21T09:43:50.990Z,5,mb,30.879,79.057,52.3,"Uttaranchal, India",usp000h1r8
+uttarkashi,2007-07-22T23:02:14.790Z,5.1,mb,30.881,78.239,19,"Uttaranchal, India",usp000fgwd
+uttarkashi,2005-12-14T07:09:54.190Z,5.1,mwc,30.476,79.255,44,"17 km WNW of P?palkoti, India",usp000e647
+uttarkashi,1999-04-06T19:37:24.050Z,5.1,mb,30.414,79.321,10,"10 km W of P?palkoti, India",usp00095ws
+uttarkashi,1999-03-30T21:02:10.340Z,5.3,mb,30.376,79.335,10,"10 km WSW of P?palkoti, India",usp00095gs
+uttarkashi,1999-03-28T19:36:05.510Z,5.4,mb,30.315,79.387,10,"12 km SSW of P?palkoti, India",usp00095cg
+uttarkashi,1999-03-28T19:05:11.030Z,6.6,mwb,30.512,79.403,15,"9 km NNW of P?palkoti, India",usp00095cb
+uttarkashi,1991-10-19T21:23:14.300Z,6.8,mwb,30.78,78.774,10.3,"32 km E of Uttark?shi, India",usp0004y1r
+uttarkashi,1986-07-16T22:03:10.790Z,5.5,mw,31.049,77.997,33,"28 km SE of Rohru, India",usp0002w2z
+uttarkashi,1984-03-23T00:34:08.720Z,5.1,mb,29.99,78.871,33,"20 km SSE of Pauri, India",usp00022wk
+uttarkashi,1981-06-13T00:56:56.330Z,5,mb,31.704,78.335,33,"55 km ENE of Sar?han, India",usp0001e4b
+uttarkashi,1981-05-28T23:14:09.540Z,5.6,ms,31.851,78.411,33,western Xizang-India border region,usp0001dxc
+uttarkashi,1979-12-28T01:59:18.800Z,5,mb,30.628,78.445,33,"11 km S of Uttark?shi, India",usp00014ra
+uttarkashi,1977-02-19T06:15:25.000Z,5.4,mb,31.786,78.417,40,"66 km ENE of Sar?han, India",usp0000mmf
+uttarkashi,1976-09-29T07:47:17.500Z,5,mb,31.771,78.348,29,"60 km ENE of Sar?han, India",usp0000jp5
+uttarkashi,1976-09-08T20:13:02.300Z,5.4,mb,32.046,78.684,18,"103 km NE of Sar?han, India",usp0000j9x
+uttarkashi,1975-11-05T00:35:57.200Z,5.2,mb,32.035,78.809,28,"112 km ENE of Sar?han, India",usp0000deh
+uttarkashi,1975-09-19T17:59:33.000Z,5.1,mb,31.973,78.476,33,"82 km NE of Sar?han, India",usp0000cvm
+uttarkashi,1975-07-19T06:10:54.900Z,5.3,mb,31.92,78.605,40,"89 km ENE of Sar?han, India",usp0000c1j
+uttarkashi,1975-01-19T08:12:08.100Z,6,mb,31.95,78.521,33,"84 km NE of Sar?han, India",usp00009jf
+cologne,1992-04-13T01:20:00.820Z,5.4,mw,51.153,5.798,21.2,"1 km W of Kessenich, Belgium",usp00055q3
+cologne,1983-11-08T00:49:32.130Z,5,mb,50.696,5.346,10,"0 km E of Hodeige, Belgium",usp0001zn0
+cologne,1982-06-28T09:57:30.340Z,5.2,mb,50.733,7.804,10,"2 km SSW of Gebhardshain, Germany",usp0001n5u
+derna,1988-01-28T15:48:08.150Z,5.3,mw,32.413,21.15,10,"31 km ESE of Al Marj, Libya",usp0003ch5
+derna,1982-08-17T22:22:24.430Z,6.4,mw,33.772,22.961,31,"115 km NNE of Darnah, Libya",usp0001p3w
+derna,1975-11-13T03:07:26.600Z,5.1,mb,33.586,22.922,33,"94 km NNE of Darnah, Libya",usp0000djj
+sindh,2009-03-17T23:14:47.180Z,5,mwc,25.911,67.238,27.4,Pakistan,usp000gv3f
+sindh,1992-12-28T08:45:42.640Z,5.2,mw,26.07,67.299,43.5,"68 km SW of Sehwan, Pakistan",usp0005jzf
+sindh,1992-03-28T10:17:41.840Z,5,mw,26.582,67.303,10,"33 km WSW of Johi, Pakistan",usp00054yt
+sindh,1992-01-21T22:07:58.930Z,5.4,mw,26.632,67.198,25.6,"41 km W of Johi, Pakistan",usp000521y

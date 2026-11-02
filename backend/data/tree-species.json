@@ -1,0 +1,4530 @@
+{
+ "source": "FAO ECOCROP via Recocrop (Hijmans, github.com/cropmodels/Recocrop)",
+ "note": "Expert-opinion ranges, not field-validated optima.",
+ "species": [
+  {
+   "id": "neem",
+   "name": "Neem",
+   "localName": "Neem",
+   "scientific": "Azadirachta indica",
+   "ecocropName": "Azadirachta indica A. Juss.",
+   "family": "Meliaceae",
+   "temp": [
+    14.0,
+    26.0,
+    40.0,
+    46.0
+   ],
+   "seasonDays": [
+    150.0,
+    210.0
+   ],
+   "seasonMonths": 6,
+   "killC": null,
+   "rain": [
+    200.0,
+    450.0,
+    1200.0,
+    2000.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    7.0,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "LMH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "teak",
+   "name": "Teak",
+   "localName": "Sagwan",
+   "scientific": "Tectona grandis",
+   "ecocropName": "Tectona grandis L.f.",
+   "family": "Verbenaceae",
+   "temp": [
+    15.0,
+    22.0,
+    32.0,
+    43.0
+   ],
+   "seasonDays": [
+    180.0,
+    270.0
+   ],
+   "seasonMonths": 7,
+   "killC": 3.0,
+   "rain": [
+    500.0,
+    1200.0,
+    3000.0,
+    4000.0
+   ],
+   "ph": [
+    4.5,
+    5.5,
+    7.5,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "MH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "sal",
+   "name": "Sal",
+   "localName": "Sal",
+   "scientific": "Shorea robusta",
+   "ecocropName": "Shorea robusta Gaertn. f.",
+   "family": "Dipterocarpaceae",
+   "temp": [
+    7.0,
+    28.0,
+    34.0,
+    47.0
+   ],
+   "seasonDays": [
+    180.0,
+    300.0
+   ],
+   "seasonMonths": 7,
+   "killC": -1.0,
+   "rain": [
+    1000.0,
+    1500.0,
+    3500.0,
+    7300.0
+   ],
+   "ph": [
+    4.5,
+    5.0,
+    6.7,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "shisham",
+   "name": "Indian rosewood",
+   "localName": "Shisham",
+   "scientific": "Dalbergia sissoo",
+   "ecocropName": "Dalbergia sissoo Roxb.",
+   "family": "Papilionaceae",
+   "temp": [
+    5.0,
+    26.0,
+    40.0,
+    50.0
+   ],
+   "seasonDays": [
+    120.0,
+    365.0
+   ],
+   "seasonMonths": 5,
+   "killC": -4.0,
+   "rain": [
+    300.0,
+    500.0,
+    2000.0,
+    4000.0
+   ],
+   "ph": [
+    4.5,
+    5.0,
+    7.5,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "I",
+    "W"
+   ]
+  },
+  {
+   "id": "arjun",
+   "name": "Arjuna",
+   "localName": "Arjun",
+   "scientific": "Terminalia arjuna",
+   "ecocropName": "Terminalia arjuna (Roxb.) W",
+   "family": "Combretaceae",
+   "temp": [
+    5.0,
+    20.0,
+    33.0,
+    47.0
+   ],
+   "seasonDays": [
+    240.0,
+    365.0
+   ],
+   "seasonMonths": 9,
+   "killC": -1.0,
+   "rain": [
+    750.0,
+    1000.0,
+    1500.0,
+    1800.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    6.0,
+    7.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "mango",
+   "name": "Mango",
+   "localName": "Aam",
+   "scientific": "Mangifera indica",
+   "ecocropName": "Mangifera indica L.",
+   "family": "Anacardiaceae",
+   "temp": [
+    8.0,
+    24.0,
+    30.0,
+    48.0
+   ],
+   "seasonDays": [
+    150.0,
+    365.0
+   ],
+   "seasonMonths": 6,
+   "killC": -1.0,
+   "rain": [
+    300.0,
+    600.0,
+    1500.0,
+    2600.0
+   ],
+   "ph": [
+    4.3,
+    5.5,
+    7.5,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "banyan",
+   "name": "Banyan",
+   "localName": "Bargad",
+   "scientific": "Ficus benghalensis",
+   "ecocropName": "Ficus benghalensis L.",
+   "family": "Moraceae",
+   "temp": [
+    9.0,
+    26.0,
+    36.0,
+    40.0
+   ],
+   "seasonDays": [
+    180.0,
+    365.0
+   ],
+   "seasonMonths": 7,
+   "killC": -2.0,
+   "rain": [
+    500.0,
+    1000.0,
+    2500.0,
+    4000.0
+   ],
+   "ph": [
+    4.5,
+    5.5,
+    7.0,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "deodar",
+   "name": "Deodar cedar",
+   "localName": "Deodar",
+   "scientific": "Cedrus deodara",
+   "ecocropName": "Cedrus deodara Loudon",
+   "family": "Coniferae",
+   "temp": [
+    4.0,
+    22.0,
+    32.0,
+    38.0
+   ],
+   "seasonDays": [
+    210.0,
+    240.0
+   ],
+   "seasonMonths": 8,
+   "killC": -12.0,
+   "rain": [
+    800.0,
+    1000.0,
+    1800.0,
+    2000.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    6.5,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "chir-pine",
+   "name": "Chir pine",
+   "localName": "Chir",
+   "scientific": "Pinus roxburghii",
+   "ecocropName": "Pinus roxburghii Sarg.",
+   "family": "Pinaceae",
+   "temp": [
+    8.0,
+    20.0,
+    30.0,
+    35.0
+   ],
+   "seasonDays": [
+    210.0,
+    300.0
+   ],
+   "seasonMonths": 8,
+   "killC": -5.0,
+   "rain": [
+    450.0,
+    750.0,
+    1800.0,
+    2900.0
+   ],
+   "ph": [
+    4.5,
+    5.5,
+    6.5,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LMH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "babul",
+   "name": "Gum arabic tree (babul)",
+   "localName": "Babool",
+   "scientific": "Vachellia nilotica",
+   "ecocropName": "Acacia nilotica (L.) Willd.",
+   "family": "Mimosaceae",
+   "temp": [
+    10.0,
+    19.0,
+    34.0,
+    50.0
+   ],
+   "seasonDays": [
+    90.0,
+    180.0
+   ],
+   "seasonMonths": 4,
+   "killC": -1.0,
+   "rain": [
+    200.0,
+    400.0,
+    1200.0,
+    2300.0
+   ],
+   "ph": [
+    5.0,
+    6.5,
+    7.5,
+    8.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LMH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "khejri",
+   "name": "Khejri",
+   "localName": "Khejri",
+   "scientific": "Prosopis cineraria",
+   "ecocropName": "Prosopis cineraria (L.) Dr.",
+   "family": "Mimosaceae",
+   "temp": [
+    6.0,
+    28.0,
+    45.0,
+    50.0
+   ],
+   "seasonDays": [
+    70.0,
+    210.0
+   ],
+   "seasonMonths": 3,
+   "killC": -6.0,
+   "rain": [
+    100.0,
+    400.0,
+    800.0,
+    900.0
+   ],
+   "ph": [
+    5.5,
+    6.5,
+    8.5,
+    9.8
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "LMH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "kadam",
+   "name": "Burflower tree",
+   "localName": "Kadam",
+   "scientific": "Neolamarckia cadamba",
+   "ecocropName": "Anthocephalus chinensis Lam",
+   "family": "Rubiaceae",
+   "temp": [
+    15.0,
+    22.0,
+    35.0,
+    42.0
+   ],
+   "seasonDays": [
+    270.0,
+    365.0
+   ],
+   "seasonMonths": 10,
+   "killC": null,
+   "rain": [
+    1300.0,
+    1800.0,
+    2600.0,
+    5100.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    6.5,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "gulmohar",
+   "name": "Flame tree",
+   "localName": "Gulmohar",
+   "scientific": "Delonix regia",
+   "ecocropName": "Delonix regia (Boj.ex Hook)",
+   "family": "Caesalpiniaceae",
+   "temp": [
+    6.0,
+    22.0,
+    35.0,
+    39.0
+   ],
+   "seasonDays": [
+    180.0,
+    365.0
+   ],
+   "seasonMonths": 7,
+   "killC": null,
+   "rain": [
+    700.0,
+    1000.0,
+    1500.0,
+    1800.0
+   ],
+   "ph": [
+    4.5,
+    5.5,
+    6.5,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "L",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "amaltas",
+   "name": "Golden shower",
+   "localName": "Amaltas",
+   "scientific": "Cassia fistula",
+   "ecocropName": "Cassia fistula L.",
+   "family": "Leguminosae",
+   "temp": [
+    4.0,
+    18.0,
+    30.0,
+    48.0
+   ],
+   "seasonDays": [
+    240.0,
+    330.0
+   ],
+   "seasonMonths": 9,
+   "killC": -4.0,
+   "rain": [
+    500.0,
+    1000.0,
+    2000.0,
+    3500.0
+   ],
+   "ph": [
+    5.5,
+    6.0,
+    7.0,
+    7.8
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "tamarind",
+   "name": "Tamarind",
+   "localName": "Imli",
+   "scientific": "Tamarindus indica",
+   "ecocropName": "Tamarindus indica L.",
+   "family": "Caesalpiniaceae",
+   "temp": [
+    12.0,
+    20.0,
+    35.0,
+    40.0
+   ],
+   "seasonDays": [
+    70.0,
+    210.0
+   ],
+   "seasonMonths": 3,
+   "killC": -3.0,
+   "rain": [
+    300.0,
+    800.0,
+    3000.0,
+    4500.0
+   ],
+   "ph": [
+    4.5,
+    5.5,
+    6.5,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "siris",
+   "name": "Siris",
+   "localName": "Siris",
+   "scientific": "Albizia lebbeck",
+   "ecocropName": "Albizia lebbeck (L.) Benth.",
+   "family": "Leguminosae",
+   "temp": [
+    12.0,
+    26.0,
+    36.0,
+    48.0
+   ],
+   "seasonDays": [
+    180.0,
+    300.0
+   ],
+   "seasonMonths": 7,
+   "killC": null,
+   "rain": [
+    500.0,
+    600.0,
+    2000.0,
+    2500.0
+   ],
+   "ph": [
+    5.5,
+    6.0,
+    7.0,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "poplar",
+   "name": "Eastern cottonwood (poplar)",
+   "localName": "Poplar",
+   "scientific": "Populus deltoides",
+   "ecocropName": "Populus deltoides Bartr.",
+   "family": "Salicaceae",
+   "temp": [
+    8.0,
+    16.0,
+    30.0,
+    34.0
+   ],
+   "seasonDays": [
+    240.0,
+    330.0
+   ],
+   "seasonMonths": 9,
+   "killC": -5.0,
+   "rain": [
+    1200.0,
+    1500.0,
+    2500.0,
+    3000.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    6.5,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "M"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "walnut",
+   "name": "Walnut",
+   "localName": "Akhrot",
+   "scientific": "Juglans regia",
+   "ecocropName": "Juglans regia L.",
+   "family": "Juglandaceae",
+   "temp": [
+    7.0,
+    15.0,
+    30.0,
+    40.0
+   ],
+   "seasonDays": [
+    150.0,
+    180.0
+   ],
+   "seasonMonths": 6,
+   "killC": null,
+   "rain": [
+    400.0,
+    800.0,
+    1700.0,
+    2200.0
+   ],
+   "ph": [
+    4.5,
+    5.5,
+    6.5,
+    8.3
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "utis",
+   "name": "Nepalese alder",
+   "localName": "Utis",
+   "scientific": "Alnus nepalensis",
+   "ecocropName": "Alnus nepalensis D. Don",
+   "family": "Betulaceae",
+   "temp": [
+    4.0,
+    19.0,
+    32.0,
+    36.0
+   ],
+   "seasonDays": [
+    180.0,
+    240.0
+   ],
+   "seasonMonths": 7,
+   "killC": null,
+   "rain": [
+    500.0,
+    1000.0,
+    2000.0,
+    2500.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    7.0,
+    8.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     3
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "moringa",
+   "name": "Drumstick tree",
+   "localName": "Sahjan",
+   "scientific": "Moringa oleifera",
+   "ecocropName": "Moringa oleifera Lam.",
+   "family": "Moringaceae",
+   "temp": [
+    7.0,
+    20.0,
+    35.0,
+    48.0
+   ],
+   "seasonDays": [
+    210.0,
+    330.0
+   ],
+   "seasonMonths": 8,
+   "killC": null,
+   "rain": [
+    300.0,
+    700.0,
+    2200.0,
+    2600.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    7.0,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "gamhar",
+   "name": "Gmelina",
+   "localName": "Gamhar",
+   "scientific": "Gmelina arborea",
+   "ecocropName": "Gmelina arborea Roxb.",
+   "family": "Verbenaceae",
+   "temp": [
+    16.0,
+    22.0,
+    34.0,
+    46.0
+   ],
+   "seasonDays": [
+    240.0,
+    300.0
+   ],
+   "seasonMonths": 9,
+   "killC": null,
+   "rain": [
+    750.0,
+    1500.0,
+    2500.0,
+    5000.0
+   ],
+   "ph": [
+    4.0,
+    5.0,
+    6.0,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "MH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "bakain",
+   "name": "Chinaberry",
+   "localName": "Bakain",
+   "scientific": "Melia azedarach",
+   "ecocropName": "Melia azedarach L.",
+   "family": "Meliaceae",
+   "temp": [
+    8.0,
+    16.0,
+    30.0,
+    34.0
+   ],
+   "seasonDays": [
+    210.0,
+    270.0
+   ],
+   "seasonMonths": 8,
+   "killC": -18.0,
+   "rain": [
+    400.0,
+    600.0,
+    1000.0,
+    1500.0
+   ],
+   "ph": [
+    5.5,
+    6.0,
+    7.0,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "semal",
+   "name": "Red silk-cotton tree",
+   "localName": "Semal",
+   "scientific": "Bombax ceiba",
+   "ecocropName": "Bombax ceiba L.",
+   "family": "Bombacaceae",
+   "temp": [
+    5.0,
+    28.0,
+    42.0,
+    49.0
+   ],
+   "seasonDays": [
+    210.0,
+    330.0
+   ],
+   "seasonMonths": 8,
+   "killC": -3.0,
+   "rain": [
+    500.0,
+    750.0,
+    4000.0,
+    5000.0
+   ],
+   "ph": [
+    4.9,
+    5.5,
+    6.5,
+    7.2
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "palash",
+   "name": "Flame of the forest",
+   "localName": "Palash",
+   "scientific": "Butea monosperma",
+   "ecocropName": "Butea monosperma (Lamk) Ta.",
+   "family": "Leguminosae",
+   "temp": [
+    10.0,
+    20.0,
+    38.0,
+    48.0
+   ],
+   "seasonDays": [
+    240.0,
+    300.0
+   ],
+   "seasonMonths": 9,
+   "killC": -4.0,
+   "rain": [
+    600.0,
+    1000.0,
+    3000.0,
+    5000.0
+   ],
+   "ph": [
+    5.5,
+    6.0,
+    7.0,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "MH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "bael",
+   "name": "Bael",
+   "localName": "Bael",
+   "scientific": "Aegle marmelos",
+   "ecocropName": "Aegle marmelos Cottea",
+   "family": "Rutaceae",
+   "temp": [
+    5.0,
+    30.0,
+    42.0,
+    49.0
+   ],
+   "seasonDays": [
+    180.0,
+    365.0
+   ],
+   "seasonMonths": 7,
+   "killC": -7.0,
+   "rain": [
+    500.0,
+    800.0,
+    2000.0,
+    4000.0
+   ],
+   "ph": [
+    5.3,
+    6.0,
+    7.5,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     3
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "H",
+    "absolute": "MH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "amla",
+   "name": "Indian gooseberry",
+   "localName": "Amla",
+   "scientific": "Phyllanthus emblica",
+   "ecocropName": "Phyllanthus emblica L.",
+   "family": "Euphorbiaceae",
+   "temp": [
+    14.0,
+    20.0,
+    29.0,
+    35.0
+   ],
+   "seasonDays": [
+    180.0,
+    365.0
+   ],
+   "seasonMonths": 7,
+   "killC": null,
+   "rain": [
+    700.0,
+    1500.0,
+    2500.0,
+    4200.0
+   ],
+   "ph": [
+    5.0,
+    6.0,
+    8.0,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "jackfruit",
+   "name": "Jackfruit",
+   "localName": "Kathal",
+   "scientific": "Artocarpus heterophyllus",
+   "ecocropName": "Artocarpus heterophyllus L.",
+   "family": "Moraceae",
+   "temp": [
+    16.0,
+    20.0,
+    30.0,
+    34.0
+   ],
+   "seasonDays": [
+    210.0,
+    365.0
+   ],
+   "seasonMonths": 8,
+   "killC": null,
+   "rain": [
+    700.0,
+    1500.0,
+    3000.0,
+    4200.0
+   ],
+   "ph": [
+    4.3,
+    5.5,
+    7.5,
+    8.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "champa",
+   "name": "Champak",
+   "localName": "Champa",
+   "scientific": "Magnolia champaca",
+   "ecocropName": "Michelia champaca L.",
+   "family": "Magnoliaceae",
+   "temp": [
+    10.0,
+    30.0,
+    37.0,
+    47.0
+   ],
+   "seasonDays": [
+    365.0,
+    365.0
+   ],
+   "seasonMonths": 12,
+   "killC": null,
+   "rain": [
+    2200.0,
+    3000.0,
+    4000.0,
+    5100.0
+   ],
+   "ph": [
+    4.0,
+    4.5,
+    5.5,
+    6.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "toon",
+   "name": "Red cedar",
+   "localName": "Tun",
+   "scientific": "Toona ciliata",
+   "ecocropName": "Toona ciliata M.J. Roem",
+   "family": "Meliaceae",
+   "temp": [
+    10.0,
+    24.0,
+    36.0,
+    48.0
+   ],
+   "seasonDays": [
+    180.0,
+    300.0
+   ],
+   "seasonMonths": 7,
+   "killC": -1.0,
+   "rain": [
+    750.0,
+    1100.0,
+    3000.0,
+    4000.0
+   ],
+   "ph": [
+    4.5,
+    5.5,
+    6.5,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "khair",
+   "name": "Cutch tree",
+   "localName": "Khair",
+   "scientific": "Senegalia catechu",
+   "ecocropName": "Acacia catechu (L.f.) Will",
+   "family": "Mimosaceae",
+   "temp": [
+    7.0,
+    25.0,
+    35.0,
+    48.0
+   ],
+   "seasonDays": [
+    180.0,
+    270.0
+   ],
+   "seasonMonths": 7,
+   "killC": -1.0,
+   "rain": [
+    500.0,
+    700.0,
+    2100.0,
+    3800.0
+   ],
+   "ph": [
+    4.5,
+    5.0,
+    6.0,
+    7.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "mulberry",
+   "name": "White mulberry",
+   "localName": "Shahtoot",
+   "scientific": "Morus alba",
+   "ecocropName": "Morus alba  L.",
+   "family": "Moraceae",
+   "temp": [
+    13.0,
+    20.0,
+    28.0,
+    39.0
+   ],
+   "seasonDays": [
+    180.0,
+    330.0
+   ],
+   "seasonMonths": 7,
+   "killC": null,
+   "rain": [
+    300.0,
+    700.0,
+    1500.0,
+    5100.0
+   ],
+   "ph": [
+    4.3,
+    5.5,
+    7.0,
+    8.3
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "harad",
+   "name": "Chebulic myrobalan",
+   "localName": "Harad",
+   "scientific": "Terminalia chebula",
+   "ecocropName": "Terminalia chebula Retz.",
+   "family": "Combretaceae",
+   "temp": [
+    5.0,
+    22.0,
+    35.0,
+    47.0
+   ],
+   "seasonDays": [
+    150.0,
+    240.0
+   ],
+   "seasonMonths": 6,
+   "killC": -5.0,
+   "rain": [
+    750.0,
+    1000.0,
+    1700.0,
+    3300.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    6.5,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "LMH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "bahera",
+   "name": "Belleric myrobalan",
+   "localName": "Bahera",
+   "scientific": "Terminalia bellirica",
+   "ecocropName": "Terminalia belerica Roxb.",
+   "family": "Combretaceae",
+   "temp": [
+    5.0,
+    20.0,
+    33.0,
+    45.0
+   ],
+   "seasonDays": [
+    180.0,
+    240.0
+   ],
+   "seasonMonths": 7,
+   "killC": -1.0,
+   "rain": [
+    1000.0,
+    1500.0,
+    2500.0,
+    3500.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    6.5,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LMH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "bijasal",
+   "name": "Indian kino tree",
+   "localName": "Bijasal",
+   "scientific": "Pterocarpus marsupium",
+   "ecocropName": "Pterocarpus marsupium Roxb.",
+   "family": "Leguminosae",
+   "temp": [
+    4.0,
+    22.0,
+    32.0,
+    47.0
+   ],
+   "seasonDays": [
+    270.0,
+    300.0
+   ],
+   "seasonMonths": 10,
+   "killC": null,
+   "rain": [
+    750.0,
+    1000.0,
+    1500.0,
+    2000.0
+   ],
+   "ph": [
+    5.5,
+    6.0,
+    7.0,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "red-sanders",
+   "name": "Red sanders",
+   "localName": "Lal chandan",
+   "scientific": "Pterocarpus santalinus",
+   "ecocropName": "Pterocarpus santalinus L.f.",
+   "family": "Leguminosae",
+   "temp": [
+    7.0,
+    26.0,
+    32.0,
+    46.0
+   ],
+   "seasonDays": [
+    240.0,
+    270.0
+   ],
+   "seasonMonths": 9,
+   "killC": -1.0,
+   "rain": [
+    875.0,
+    1000.0,
+    1900.0,
+    2800.0
+   ],
+   "ph": [
+    4.5,
+    5.0,
+    5.5,
+    6.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W",
+    "E"
+   ]
+  },
+  {
+   "id": "sandalwood",
+   "name": "Indian sandalwood",
+   "localName": "Chandan",
+   "scientific": "Santalum album",
+   "ecocropName": "Santalum album L.",
+   "family": "Santalaceae",
+   "temp": [
+    10.0,
+    22.0,
+    30.0,
+    36.0
+   ],
+   "seasonDays": [
+    150.0,
+    365.0
+   ],
+   "seasonMonths": 6,
+   "killC": null,
+   "rain": [
+    800.0,
+    1000.0,
+    1400.0,
+    2800.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    6.5,
+    7.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "anjan",
+   "name": "Hardwickia",
+   "localName": "Anjan",
+   "scientific": "Hardwickia binata",
+   "ecocropName": "Hardwickia binata Roxb.",
+   "family": "Leguminaceae",
+   "temp": [
+    5.0,
+    15.0,
+    38.0,
+    46.0
+   ],
+   "seasonDays": [
+    240.0,
+    330.0
+   ],
+   "seasonMonths": 9,
+   "killC": -2.0,
+   "rain": [
+    250.0,
+    500.0,
+    1000.0,
+    1500.0
+   ],
+   "ph": [
+    6.0,
+    6.5,
+    7.5,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     3
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "axlewood",
+   "name": "Axlewood",
+   "localName": null,
+   "scientific": "Anogeissus latifolia",
+   "ecocropName": "Anogeissus latifolia Roxb.",
+   "family": "Combretaceae",
+   "temp": [
+    7.0,
+    22.0,
+    33.0,
+    47.0
+   ],
+   "seasonDays": [
+    150.0,
+    210.0
+   ],
+   "seasonMonths": 6,
+   "killC": -2.0,
+   "rain": [
+    600.0,
+    800.0,
+    1400.0,
+    2300.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    6.5,
+    7.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W",
+    "E"
+   ]
+  },
+  {
+   "id": "haldu",
+   "name": "Haldu",
+   "localName": "Haldu",
+   "scientific": "Haldina cordifolia",
+   "ecocropName": "Adina cordifolia Hook. f.",
+   "family": "Rubiaceae",
+   "temp": [
+    5.0,
+    25.0,
+    35.0,
+    47.0
+   ],
+   "seasonDays": [
+    180.0,
+    270.0
+   ],
+   "seasonMonths": 7,
+   "killC": -1.0,
+   "rain": [
+    800.0,
+    1000.0,
+    2000.0,
+    4500.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    6.5,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "banj-oak",
+   "name": "Banj oak",
+   "localName": "Banj",
+   "scientific": "Quercus leucotrichophora",
+   "ecocropName": "Quercus incana Roxb.",
+   "family": "Fagaceae",
+   "temp": [
+    2.0,
+    15.0,
+    25.0,
+    38.0
+   ],
+   "seasonDays": [
+    160.0,
+    240.0
+   ],
+   "seasonMonths": 6,
+   "killC": -7.0,
+   "rain": [
+    1000.0,
+    1500.0,
+    2500.0,
+    3000.0
+   ],
+   "ph": [
+    4.5,
+    5.0,
+    6.0,
+    7.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     4
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "LMH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "I",
+    "W"
+   ]
+  },
+  {
+   "id": "moru-oak",
+   "name": "Moru oak",
+   "localName": "Moru",
+   "scientific": "Quercus floribunda",
+   "ecocropName": "Quercus dilatata Lindl.",
+   "family": "Fagaceae",
+   "temp": [
+    2.0,
+    15.0,
+    25.0,
+    32.0
+   ],
+   "seasonDays": [
+    150.0,
+    240.0
+   ],
+   "seasonMonths": 6,
+   "killC": -8.0,
+   "rain": [
+    1100.0,
+    1500.0,
+    2000.0,
+    2400.0
+   ],
+   "ph": [
+    4.5,
+    5.0,
+    6.0,
+    7.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     4
+    ],
+    "absolute": [
+     1,
+     5
+    ]
+   },
+   "texture": {
+    "optimal": "LMH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "kharsu-oak",
+   "name": "Brown oak",
+   "localName": "Kharsu",
+   "scientific": "Quercus semecarpifolia",
+   "ecocropName": "Quercus semecarpifolia Smi.",
+   "family": "Fagaceae",
+   "temp": [
+    2.0,
+    12.0,
+    22.0,
+    28.0
+   ],
+   "seasonDays": [
+    120.0,
+    150.0
+   ],
+   "seasonMonths": 5,
+   "killC": -10.0,
+   "rain": [
+    500.0,
+    1500.0,
+    2000.0,
+    2500.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    6.5,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "himalayan-spruce",
+   "name": "West Himalayan spruce",
+   "localName": null,
+   "scientific": "Picea smithiana",
+   "ecocropName": "Picea morida Link.",
+   "family": "Coniferae",
+   "temp": [
+    2.0,
+    15.0,
+    25.0,
+    32.0
+   ],
+   "seasonDays": [
+    180.0,
+    210.0
+   ],
+   "seasonMonths": 7,
+   "killC": -7.0,
+   "rain": [
+    1000.0,
+    1500.0,
+    2000.0,
+    2500.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    7.0,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "pindrow-fir",
+   "name": "West Himalayan fir",
+   "localName": null,
+   "scientific": "Abies pindrow",
+   "ecocropName": "Abies pindrow Spach.",
+   "family": "Coniferae",
+   "temp": [
+    2.0,
+    16.0,
+    24.0,
+    32.0
+   ],
+   "seasonDays": [
+    90.0,
+    180.0
+   ],
+   "seasonMonths": 4,
+   "killC": -10.0,
+   "rain": [
+    1100.0,
+    1300.0,
+    2000.0,
+    2500.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    6.5,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     5
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "M"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "himalayan-cypress",
+   "name": "Himalayan cypress",
+   "localName": "Surai",
+   "scientific": "Cupressus torulosa",
+   "ecocropName": "Cupressus torulosa Don",
+   "family": "Cupressaceae",
+   "temp": [
+    5.0,
+    20.0,
+    32.0,
+    45.0
+   ],
+   "seasonDays": [
+    240.0,
+    270.0
+   ],
+   "seasonMonths": 9,
+   "killC": -9.0,
+   "rain": [
+    650.0,
+    800.0,
+    1600.0,
+    2400.0
+   ],
+   "ph": [
+    4.5,
+    5.5,
+    7.0,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "I",
+    "W"
+   ]
+  },
+  {
+   "id": "horse-chestnut",
+   "name": "Indian horse chestnut",
+   "localName": null,
+   "scientific": "Aesculus indica",
+   "ecocropName": "Aesculus indica Griff.",
+   "family": "Hippocastanaceae",
+   "temp": [
+    6.0,
+    23.0,
+    26.0,
+    30.0
+   ],
+   "seasonDays": [
+    210.0,
+    270.0
+   ],
+   "seasonMonths": 8,
+   "killC": -8.0,
+   "rain": [
+    660.0,
+    1000.0,
+    2000.0,
+    2500.0
+   ],
+   "ph": [
+    4.0,
+    4.5,
+    5.0,
+    6.0
+   ],
+   "light": {
+    "optimal": [
+     2,
+     4
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "khasi-pine",
+   "name": "Khasi pine",
+   "localName": null,
+   "scientific": "Pinus kesiya",
+   "ecocropName": "Pinus kesiya Royle ex Gord.",
+   "family": "Pinaceae",
+   "temp": [
+    12.0,
+    22.0,
+    30.0,
+    34.0
+   ],
+   "seasonDays": [
+    180.0,
+    300.0
+   ],
+   "seasonMonths": 7,
+   "killC": -1.0,
+   "rain": [
+    700.0,
+    900.0,
+    2000.0,
+    2500.0
+   ],
+   "ph": [
+    3.5,
+    4.5,
+    5.5,
+    6.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "MH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "karanj",
+   "name": "Indian beech (pongamia)",
+   "localName": "Karanj",
+   "scientific": "Pongamia pinnata",
+   "ecocropName": "Derris indica (Lam.) Bennet",
+   "family": "Leguminasae",
+   "temp": [
+    3.0,
+    22.0,
+    32.0,
+    50.0
+   ],
+   "seasonDays": [
+    270.0,
+    330.0
+   ],
+   "seasonMonths": 10,
+   "killC": -1.0,
+   "rain": [
+    300.0,
+    500.0,
+    800.0,
+    2500.0
+   ],
+   "ph": [
+    5.5,
+    6.0,
+    7.0,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     3,
+     4
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "L",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "I",
+    "W"
+   ]
+  },
+  {
+   "id": "mahua",
+   "name": "Mahua",
+   "localName": "Mahua",
+   "scientific": "Madhuca longifolia var. latifolia",
+   "ecocropName": "Bassia latifolia Roxb.",
+   "family": "Sapotaceae",
+   "temp": [
+    8.0,
+    20.0,
+    30.0,
+    47.0
+   ],
+   "seasonDays": [
+    210.0,
+    270.0
+   ],
+   "seasonMonths": 8,
+   "killC": -1.0,
+   "rain": [
+    750.0,
+    1000.0,
+    1600.0,
+    1900.0
+   ],
+   "ph": [
+    5.0,
+    6.0,
+    7.0,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "L",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W",
+    "E"
+   ]
+  },
+  {
+   "id": "ber",
+   "name": "Indian jujube",
+   "localName": "Ber",
+   "scientific": "Ziziphus mauritiana",
+   "ecocropName": "Ziziphus mauritianus Lamk.",
+   "family": "Rhamnaceae",
+   "temp": [
+    7.0,
+    25.0,
+    42.0,
+    50.0
+   ],
+   "seasonDays": [
+    100.0,
+    330.0
+   ],
+   "seasonMonths": 4,
+   "killC": -15.0,
+   "rain": [
+    130.0,
+    300.0,
+    1500.0,
+    4000.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    6.5,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "saptaparni",
+   "name": "Devil tree",
+   "localName": "Saptaparni",
+   "scientific": "Alstonia scholaris",
+   "ecocropName": "Alstonia scholaris (L)R.Br.",
+   "family": "Apocynaceae",
+   "temp": [
+    12.0,
+    22.0,
+    28.0,
+    36.0
+   ],
+   "seasonDays": [
+    300.0,
+    365.0
+   ],
+   "seasonMonths": 11,
+   "killC": null,
+   "rain": [
+    1100.0,
+    1500.0,
+    3000.0,
+    3800.0
+   ],
+   "ph": [
+    4.5,
+    5.5,
+    6.5,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "kusum",
+   "name": "Ceylon oak",
+   "localName": "Kusum",
+   "scientific": "Schleichera oleosa",
+   "ecocropName": "Schleichera oleosa (Lour.)",
+   "family": "Sapindaceae",
+   "temp": [
+    10.0,
+    30.0,
+    42.0,
+    47.0
+   ],
+   "seasonDays": [
+    270.0,
+    330.0
+   ],
+   "seasonMonths": 10,
+   "killC": -4.0,
+   "rain": [
+    750.0,
+    1200.0,
+    2300.0,
+    2800.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    6.5,
+    7.8
+   ],
+   "light": {
+    "optimal": [
+     1,
+     3
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "tendu",
+   "name": "Coromandel ebony",
+   "localName": "Tendu",
+   "scientific": "Diospyros melanoxylon",
+   "ecocropName": "Diospyros melanoxylon Roxb.",
+   "family": "Ebenaceae",
+   "temp": [
+    8.0,
+    25.0,
+    35.0,
+    45.0
+   ],
+   "seasonDays": [
+    240.0,
+    330.0
+   ],
+   "seasonMonths": 9,
+   "killC": -5.0,
+   "rain": [
+    500.0,
+    800.0,
+    1200.0,
+    1500.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    7.0,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "gurjan",
+   "name": "Gurjan",
+   "localName": "Gurjan",
+   "scientific": "Dipterocarpus turbinatus",
+   "ecocropName": "Dipterocarpus turbinatus G.",
+   "family": "Dipterocarpaceae",
+   "temp": [
+    10.0,
+    24.0,
+    32.0,
+    40.0
+   ],
+   "seasonDays": [
+    240.0,
+    300.0
+   ],
+   "seasonMonths": 9,
+   "killC": 5.0,
+   "rain": [
+    1500.0,
+    2500.0,
+    3500.0,
+    5100.0
+   ],
+   "ph": [
+    4.3,
+    4.8,
+    5.8,
+    6.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "L",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "nagkesar",
+   "name": "Ceylon ironwood",
+   "localName": "Nagkesar",
+   "scientific": "Mesua ferrea",
+   "ecocropName": "Mesua ferrea L.",
+   "family": "Guttiferae",
+   "temp": [
+    4.0,
+    30.0,
+    35.0,
+    45.0
+   ],
+   "seasonDays": [
+    300.0,
+    365.0
+   ],
+   "seasonMonths": 11,
+   "killC": -2.0,
+   "rain": [
+    2000.0,
+    3000.0,
+    4000.0,
+    5100.0
+   ],
+   "ph": [
+    4.3,
+    5.0,
+    5.5,
+    6.9
+   ],
+   "light": {
+    "optimal": [
+     1,
+     3
+    ],
+    "absolute": [
+     1,
+     5
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "thingan",
+   "name": "Thingan",
+   "localName": null,
+   "scientific": "Hopea odorata",
+   "ecocropName": "Hopea odorata Roxb.",
+   "family": "Dipterocarpaceae",
+   "temp": [
+    10.0,
+    26.0,
+    36.0,
+    41.0
+   ],
+   "seasonDays": [
+    300.0,
+    365.0
+   ],
+   "seasonMonths": 11,
+   "killC": -3.0,
+   "rain": [
+    2200.0,
+    3000.0,
+    4000.0,
+    5100.0
+   ],
+   "ph": [
+    4.4,
+    4.8,
+    5.2,
+    6.0
+   ],
+   "light": {
+    "optimal": [
+     2,
+     3
+    ],
+    "absolute": [
+     1,
+     5
+    ]
+   },
+   "texture": {
+    "optimal": "LMH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "I",
+    "W"
+   ]
+  },
+  {
+   "id": "polang",
+   "name": "Alexandrian laurel",
+   "localName": "Undi",
+   "scientific": "Calophyllum inophyllum",
+   "ecocropName": "Calophyllum inophyllum L.",
+   "family": "Cuttifereae",
+   "temp": [
+    10.0,
+    28.0,
+    35.0,
+    42.0
+   ],
+   "seasonDays": [
+    365.0,
+    365.0
+   ],
+   "seasonMonths": 12,
+   "killC": 7.0,
+   "rain": [
+    750.0,
+    2000.0,
+    4000.0,
+    5000.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    7.0,
+    8.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "L",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "I"
+   ]
+  },
+  {
+   "id": "mahogany",
+   "name": "Big-leaf mahogany",
+   "localName": null,
+   "scientific": "Swietenia macrophylla",
+   "ecocropName": "Swietenia macrophylla King",
+   "family": "Meliaceae",
+   "temp": [
+    11.0,
+    21.0,
+    34.0,
+    39.0
+   ],
+   "seasonDays": [
+    240.0,
+    365.0
+   ],
+   "seasonMonths": 9,
+   "killC": null,
+   "rain": [
+    1400.0,
+    2000.0,
+    4000.0,
+    6000.0
+   ],
+   "ph": [
+    6.0,
+    6.5,
+    7.5,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     3
+    ],
+    "absolute": [
+     1,
+     5
+    ]
+   },
+   "texture": {
+    "optimal": "MH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "brazil-nut",
+   "name": "Brazil nut",
+   "localName": null,
+   "scientific": "Bertholletia excelsa",
+   "ecocropName": "Bertholletia excelsa H.& B.",
+   "family": "Lecythidaceae",
+   "temp": [
+    12.0,
+    20.0,
+    36.0,
+    40.0
+   ],
+   "seasonDays": [
+    365.0,
+    365.0
+   ],
+   "seasonMonths": 12,
+   "killC": null,
+   "rain": [
+    1400.0,
+    2400.0,
+    2800.0,
+    3500.0
+   ],
+   "ph": [
+    4.5,
+    5.5,
+    7.0,
+    8.0
+   ],
+   "light": {
+    "optimal": [
+     2,
+     3
+    ],
+    "absolute": [
+     2,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "MH",
+    "absolute": "MH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "spanish-cedar",
+   "name": "Spanish cedar",
+   "localName": null,
+   "scientific": "Cedrela odorata",
+   "ecocropName": "Cedrela odorata L.",
+   "family": "Meliaceae",
+   "temp": [
+    11.0,
+    27.0,
+    36.0,
+    39.0
+   ],
+   "seasonDays": [
+    240.0,
+    300.0
+   ],
+   "seasonMonths": 9,
+   "killC": null,
+   "rain": [
+    600.0,
+    1200.0,
+    2500.0,
+    3000.0
+   ],
+   "ph": [
+    6.0,
+    6.5,
+    7.5,
+    8.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LMH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "pink-poui",
+   "name": "Pink poui",
+   "localName": null,
+   "scientific": "Tabebuia rosea",
+   "ecocropName": "Tabebuia rosea (Bertol.)DC.",
+   "family": "Bignoniaceae",
+   "temp": [
+    17.0,
+    22.0,
+    30.0,
+    34.0
+   ],
+   "seasonDays": [
+    270.0,
+    365.0
+   ],
+   "seasonMonths": 10,
+   "killC": null,
+   "rain": [
+    1250.0,
+    1500.0,
+    2000.0,
+    2500.0
+   ],
+   "ph": [
+    4.5,
+    5.5,
+    7.0,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "rain-tree",
+   "name": "Rain tree",
+   "localName": null,
+   "scientific": "Albizia saman",
+   "ecocropName": "Samanea saman Merrill",
+   "family": "Mimosaceae",
+   "temp": [
+    15.0,
+    22.0,
+    30.0,
+    35.0
+   ],
+   "seasonDays": [
+    210.0,
+    300.0
+   ],
+   "seasonMonths": 8,
+   "killC": null,
+   "rain": [
+    600.0,
+    800.0,
+    2000.0,
+    3000.0
+   ],
+   "ph": [
+    4.5,
+    5.5,
+    6.5,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LMH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "I",
+    "W"
+   ]
+  },
+  {
+   "id": "inga",
+   "name": "Ice-cream bean",
+   "localName": null,
+   "scientific": "Inga edulis",
+   "ecocropName": "Inga edulis von Martius",
+   "family": "Mimosaceae",
+   "temp": [
+    18.0,
+    23.0,
+    30.0,
+    35.0
+   ],
+   "seasonDays": [
+    150.0,
+    270.0
+   ],
+   "seasonMonths": 6,
+   "killC": null,
+   "rain": [
+    640.0,
+    1500.0,
+    1900.0,
+    4000.0
+   ],
+   "ph": [
+    4.5,
+    5.0,
+    6.5,
+    8.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "MH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "I",
+    "W"
+   ]
+  },
+  {
+   "id": "parana-pine",
+   "name": "Paraná pine",
+   "localName": null,
+   "scientific": "Araucaria angustifolia",
+   "ecocropName": "Araucaria angustifolia Ber.",
+   "family": "Araucariaceae",
+   "temp": [
+    9.0,
+    18.0,
+    23.0,
+    27.0
+   ],
+   "seasonDays": [
+    300.0,
+    365.0
+   ],
+   "seasonMonths": 11,
+   "killC": -5.0,
+   "rain": [
+    1250.0,
+    1500.0,
+    2000.0,
+    2500.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    6.5,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "M"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "kapok",
+   "name": "Kapok",
+   "localName": null,
+   "scientific": "Ceiba pentandra",
+   "ecocropName": "Ceiba pentandra (L.) Gaertn",
+   "family": "Bombacaceae",
+   "temp": [
+    12.0,
+    17.0,
+    38.0,
+    40.0
+   ],
+   "seasonDays": [
+    270.0,
+    330.0
+   ],
+   "seasonMonths": 10,
+   "killC": -1.0,
+   "rain": [
+    750.0,
+    1500.0,
+    2500.0,
+    3000.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    6.5,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "african-mahogany",
+   "name": "African mahogany",
+   "localName": null,
+   "scientific": "Khaya senegalensis",
+   "ecocropName": "Khaya senegalensis (Desr.)",
+   "family": "Meliaceae",
+   "temp": [
+    13.0,
+    29.0,
+    38.0,
+    42.0
+   ],
+   "seasonDays": [
+    150.0,
+    210.0
+   ],
+   "seasonMonths": 6,
+   "killC": null,
+   "rain": [
+    650.0,
+    800.0,
+    1300.0,
+    1500.0
+   ],
+   "ph": [
+    4.5,
+    5.0,
+    6.0,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "MH",
+    "absolute": "MH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "winter-thorn",
+   "name": "Winter thorn",
+   "localName": null,
+   "scientific": "Faidherbia albida",
+   "ecocropName": "Acacia albida Del.",
+   "family": "Mimosaceae",
+   "temp": [
+    6.0,
+    18.0,
+    30.0,
+    44.0
+   ],
+   "seasonDays": [
+    70.0,
+    240.0
+   ],
+   "seasonMonths": 3,
+   "killC": -1.0,
+   "rain": [
+    250.0,
+    400.0,
+    900.0,
+    2000.0
+   ],
+   "ph": [
+    4.5,
+    5.0,
+    6.5,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "gum-arabic",
+   "name": "Gum arabic tree",
+   "localName": null,
+   "scientific": "Senegalia senegal",
+   "ecocropName": "Acacia senegal (L.) Willd.",
+   "family": "Mimosaceae",
+   "temp": [
+    14.0,
+    24.0,
+    32.0,
+    48.0
+   ],
+   "seasonDays": [
+    60.0,
+    180.0
+   ],
+   "seasonMonths": 3,
+   "killC": -4.0,
+   "rain": [
+    200.0,
+    300.0,
+    800.0,
+    2300.0
+   ],
+   "ph": [
+    4.5,
+    5.0,
+    7.0,
+    8.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W",
+    "E"
+   ]
+  },
+  {
+   "id": "desert-date",
+   "name": "Desert date",
+   "localName": null,
+   "scientific": "Balanites aegyptiaca",
+   "ecocropName": "Balanites aegyptiaca (L)Del",
+   "family": "Balantiaceae",
+   "temp": [
+    15.0,
+    25.0,
+    35.0,
+    41.0
+   ],
+   "seasonDays": [
+    90.0,
+    180.0
+   ],
+   "seasonMonths": 4,
+   "killC": null,
+   "rain": [
+    200.0,
+    300.0,
+    800.0,
+    1700.0
+   ],
+   "ph": [
+    6.5,
+    7.0,
+    8.0,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "MH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "baobab",
+   "name": "Baobab",
+   "localName": null,
+   "scientific": "Adansonia digitata",
+   "ecocropName": "Adansonia digitata F.Muell",
+   "family": "Bombacaceae",
+   "temp": [
+    14.0,
+    26.0,
+    36.0,
+    42.0
+   ],
+   "seasonDays": [
+    210.0,
+    270.0
+   ],
+   "seasonMonths": 8,
+   "killC": null,
+   "rain": [
+    450.0,
+    600.0,
+    1500.0,
+    4200.0
+   ],
+   "ph": [
+    4.3,
+    5.0,
+    6.5,
+    8.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W",
+    "E"
+   ]
+  },
+  {
+   "id": "shea",
+   "name": "Shea tree",
+   "localName": null,
+   "scientific": "Vitellaria paradoxa",
+   "ecocropName": "Butyrospermum paradoxum (G)",
+   "family": "Sapotaceae",
+   "temp": [
+    18.0,
+    29.0,
+    38.0,
+    43.0
+   ],
+   "seasonDays": [
+    180.0,
+    240.0
+   ],
+   "seasonMonths": 7,
+   "killC": null,
+   "rain": [
+    300.0,
+    500.0,
+    1000.0,
+    1800.0
+   ],
+   "ph": [
+    5.5,
+    6.0,
+    7.0,
+    8.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "LMHO",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "locust-bean",
+   "name": "African locust bean",
+   "localName": null,
+   "scientific": "Parkia biglobosa",
+   "ecocropName": "Parkia biglobosa (Jacq.) B.",
+   "family": "Mimosaceae",
+   "temp": [
+    8.0,
+    28.0,
+    40.0,
+    44.0
+   ],
+   "seasonDays": [
+    180.0,
+    270.0
+   ],
+   "seasonMonths": 7,
+   "killC": null,
+   "rain": [
+    400.0,
+    500.0,
+    1000.0,
+    1500.0
+   ],
+   "ph": [
+    4.0,
+    4.5,
+    5.5,
+    6.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "limba",
+   "name": "Limba",
+   "localName": null,
+   "scientific": "Terminalia superba",
+   "ecocropName": "Terminalia superba Engl.&D.",
+   "family": "Combretaceae",
+   "temp": [
+    22.0,
+    26.0,
+    32.0,
+    36.0
+   ],
+   "seasonDays": [
+    270.0,
+    330.0
+   ],
+   "seasonMonths": 10,
+   "killC": null,
+   "rain": [
+    1200.0,
+    1400.0,
+    1800.0,
+    2000.0
+   ],
+   "ph": [
+    6.0,
+    6.5,
+    7.5,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "M"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "african-juniper",
+   "name": "African pencil cedar",
+   "localName": null,
+   "scientific": "Juniperus procera",
+   "ecocropName": "Juniperus procera Hochst.",
+   "family": "Cupressaceae",
+   "temp": [
+    7.0,
+    18.0,
+    30.0,
+    55.0
+   ],
+   "seasonDays": [
+    180.0,
+    330.0
+   ],
+   "seasonMonths": 7,
+   "killC": -12.0,
+   "rain": [
+    400.0,
+    600.0,
+    1000.0,
+    1200.0
+   ],
+   "ph": [
+    6.0,
+    6.5,
+    7.5,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "cork-oak",
+   "name": "Cork oak",
+   "localName": null,
+   "scientific": "Quercus suber",
+   "ecocropName": "Quercus suber L.",
+   "family": "Fagaceae",
+   "temp": [
+    5.0,
+    14.0,
+    32.0,
+    42.0
+   ],
+   "seasonDays": [
+    365.0,
+    365.0
+   ],
+   "seasonMonths": 12,
+   "killC": -5.0,
+   "rain": [
+    310.0,
+    600.0,
+    1000.0,
+    2000.0
+   ],
+   "ph": [
+    4.5,
+    5.5,
+    7.0,
+    8.2
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W",
+    "E"
+   ]
+  },
+  {
+   "id": "holm-oak",
+   "name": "Holm oak",
+   "localName": null,
+   "scientific": "Quercus ilex",
+   "ecocropName": "Quercus ilex L.",
+   "family": "Fagaceae",
+   "temp": [
+    4.0,
+    14.0,
+    32.0,
+    36.0
+   ],
+   "seasonDays": [
+    120.0,
+    180.0
+   ],
+   "seasonMonths": 5,
+   "killC": -5.0,
+   "rain": [
+    375.0,
+    450.0,
+    700.0,
+    750.0
+   ],
+   "ph": [
+    5.5,
+    6.0,
+    7.0,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     3
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W",
+    "E"
+   ]
+  },
+  {
+   "id": "olive",
+   "name": "Olive",
+   "localName": null,
+   "scientific": "Olea europaea",
+   "ecocropName": "Olea europaea L.",
+   "family": "Oleaceae",
+   "temp": [
+    5.0,
+    20.0,
+    34.0,
+    40.0
+   ],
+   "seasonDays": [
+    210.0,
+    300.0
+   ],
+   "seasonMonths": 8,
+   "killC": null,
+   "rain": [
+    200.0,
+    400.0,
+    700.0,
+    1200.0
+   ],
+   "ph": [
+    5.3,
+    6.0,
+    7.0,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     1
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "aleppo-pine",
+   "name": "Aleppo pine",
+   "localName": null,
+   "scientific": "Pinus halepensis",
+   "ecocropName": "Pinus halepensis Mill.",
+   "family": "Pinaceae",
+   "temp": [
+    6.0,
+    18.0,
+    34.0,
+    38.0
+   ],
+   "seasonDays": [
+    180.0,
+    210.0
+   ],
+   "seasonMonths": 7,
+   "killC": -20.0,
+   "rain": [
+    250.0,
+    400.0,
+    600.0,
+    800.0
+   ],
+   "ph": [
+    4.5,
+    5.5,
+    7.5,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     1
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "stone-pine",
+   "name": "Stone pine",
+   "localName": null,
+   "scientific": "Pinus pinea",
+   "ecocropName": "Pinus pinea L.",
+   "family": "Pinaceae",
+   "temp": [
+    8.0,
+    18.0,
+    32.0,
+    38.0
+   ],
+   "seasonDays": [
+    180.0,
+    240.0
+   ],
+   "seasonMonths": 7,
+   "killC": -2.0,
+   "rain": [
+    400.0,
+    500.0,
+    700.0,
+    800.0
+   ],
+   "ph": [
+    4.0,
+    4.5,
+    5.5,
+    6.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "maritime-pine",
+   "name": "Maritime pine",
+   "localName": null,
+   "scientific": "Pinus pinaster",
+   "ecocropName": "Pinus pinaster Aiton (Port)",
+   "family": "Pinaceae",
+   "temp": [
+    6.0,
+    18.0,
+    30.0,
+    34.0
+   ],
+   "seasonDays": [
+    270.0,
+    330.0
+   ],
+   "seasonMonths": 10,
+   "killC": -2.0,
+   "rain": [
+    625.0,
+    800.0,
+    1100.0,
+    1300.0
+   ],
+   "ph": [
+    4.0,
+    4.5,
+    5.5,
+    6.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "L",
+    "absolute": "L"
+   },
+   "drainage": [
+    "W",
+    "E"
+   ]
+  },
+  {
+   "id": "carob",
+   "name": "Carob",
+   "localName": null,
+   "scientific": "Ceratonia siliqua",
+   "ecocropName": "Ceratonia siliqua L.",
+   "family": "Leguminosae",
+   "temp": [
+    10.0,
+    20.0,
+    32.0,
+    39.0
+   ],
+   "seasonDays": [
+    210.0,
+    365.0
+   ],
+   "seasonMonths": 8,
+   "killC": -4.0,
+   "rain": [
+    200.0,
+    400.0,
+    1000.0,
+    2000.0
+   ],
+   "ph": [
+    5.0,
+    6.0,
+    7.5,
+    8.6
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "sweet-chestnut",
+   "name": "Sweet chestnut",
+   "localName": null,
+   "scientific": "Castanea sativa",
+   "ecocropName": "Castanea sativa Mill.",
+   "family": "Fagaceae",
+   "temp": [
+    7.0,
+    15.0,
+    25.0,
+    30.0
+   ],
+   "seasonDays": [
+    150.0,
+    210.0
+   ],
+   "seasonMonths": 6,
+   "killC": null,
+   "rain": [
+    500.0,
+    900.0,
+    1300.0,
+    1600.0
+   ],
+   "ph": [
+    4.0,
+    5.0,
+    6.0,
+    7.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "beech",
+   "name": "European beech",
+   "localName": null,
+   "scientific": "Fagus sylvatica",
+   "ecocropName": "Fagus sylvatica L.",
+   "family": "Fagaceae",
+   "temp": [
+    6.0,
+    10.0,
+    20.0,
+    35.0
+   ],
+   "seasonDays": [
+    150.0,
+    210.0
+   ],
+   "seasonMonths": 6,
+   "killC": -28.0,
+   "rain": [
+    300.0,
+    500.0,
+    1000.0,
+    1500.0
+   ],
+   "ph": [
+    4.0,
+    5.0,
+    7.0,
+    8.2
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "MH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "scots-pine",
+   "name": "Scots pine",
+   "localName": null,
+   "scientific": "Pinus sylvestris",
+   "ecocropName": "Pinus sylvestris L.",
+   "family": "Pinaceae",
+   "temp": [
+    2.0,
+    14.0,
+    23.0,
+    35.0
+   ],
+   "seasonDays": [
+    150.0,
+    210.0
+   ],
+   "seasonMonths": 6,
+   "killC": -40.0,
+   "rain": [
+    300.0,
+    600.0,
+    1000.0,
+    2000.0
+   ],
+   "ph": [
+    4.5,
+    5.0,
+    7.5,
+    8.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "wild-cherry",
+   "name": "Wild cherry",
+   "localName": null,
+   "scientific": "Prunus avium",
+   "ecocropName": "Prunus avium L.",
+   "family": "Rosaceae",
+   "temp": [
+    6.0,
+    18.0,
+    28.0,
+    40.0
+   ],
+   "seasonDays": [
+    180.0,
+    240.0
+   ],
+   "seasonMonths": 7,
+   "killC": -3.0,
+   "rain": [
+    300.0,
+    500.0,
+    900.0,
+    1500.0
+   ],
+   "ph": [
+    4.5,
+    5.5,
+    6.5,
+    7.0
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "MH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "black-walnut",
+   "name": "Black walnut",
+   "localName": null,
+   "scientific": "Juglans nigra",
+   "ecocropName": "Juglans nigra L.",
+   "family": "Juglandaceae",
+   "temp": [
+    2.0,
+    13.0,
+    28.0,
+    36.0
+   ],
+   "seasonDays": [
+    150.0,
+    180.0
+   ],
+   "seasonMonths": 6,
+   "killC": null,
+   "rain": [
+    300.0,
+    800.0,
+    1000.0,
+    1300.0
+   ],
+   "ph": [
+    5.8,
+    6.5,
+    7.5,
+    8.3
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "sugar-maple",
+   "name": "Sugar maple",
+   "localName": null,
+   "scientific": "Acer saccharum",
+   "ecocropName": "Acer saccharum",
+   "family": "Aceraceae",
+   "temp": [
+    4.0,
+    14.0,
+    24.0,
+    28.0
+   ],
+   "seasonDays": [
+    130.0,
+    240.0
+   ],
+   "seasonMonths": 5,
+   "killC": -18.0,
+   "rain": [
+    500.0,
+    700.0,
+    1300.0,
+    1500.0
+   ],
+   "ph": [
+    5.3,
+    6.0,
+    6.5,
+    7.3
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "M",
+    "absolute": "M"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "ponderosa-pine",
+   "name": "Ponderosa pine",
+   "localName": null,
+   "scientific": "Pinus ponderosa",
+   "ecocropName": "Pinus ponderosa Dougl.",
+   "family": "Pinaceae",
+   "temp": [
+    4.0,
+    15.0,
+    24.0,
+    28.0
+   ],
+   "seasonDays": [
+    240.0,
+    330.0
+   ],
+   "seasonMonths": 9,
+   "killC": -5.0,
+   "rain": [
+    650.0,
+    750.0,
+    800.0,
+    900.0
+   ],
+   "ph": [
+    4.5,
+    5.5,
+    7.0,
+    8.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     4
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "live-oak",
+   "name": "Southern live oak",
+   "localName": null,
+   "scientific": "Quercus virginiana",
+   "ecocropName": "Quercus virginiana",
+   "family": "Fagaceae",
+   "temp": [
+    7.0,
+    18.0,
+    32.0,
+    38.0
+   ],
+   "seasonDays": [
+    150.0,
+    210.0
+   ],
+   "seasonMonths": 6,
+   "killC": null,
+   "rain": [
+    900.0,
+    1200.0,
+    1800.0,
+    2400.0
+   ],
+   "ph": [
+    5.5,
+    6.0,
+    7.0,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "L",
+    "absolute": "LM"
+   },
+   "drainage": [
+    "W",
+    "E"
+   ]
+  },
+  {
+   "id": "pecan",
+   "name": "Pecan",
+   "localName": null,
+   "scientific": "Carya illinoinensis",
+   "ecocropName": "Carya illinoensis Wangenh.",
+   "family": "Juglandaceae",
+   "temp": [
+    5.0,
+    15.0,
+    35.0,
+    40.0
+   ],
+   "seasonDays": [
+    140.0,
+    210.0
+   ],
+   "seasonMonths": 6,
+   "killC": null,
+   "rain": [
+    400.0,
+    600.0,
+    1200.0,
+    1800.0
+   ],
+   "ph": [
+    5.0,
+    5.5,
+    7.0,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMHO"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "hoop-pine",
+   "name": "Hoop pine",
+   "localName": null,
+   "scientific": "Araucaria cunninghamii",
+   "ecocropName": "Araucaria cunninghamii Ait.",
+   "family": "Araucariaceae",
+   "temp": [
+    5.0,
+    18.0,
+    28.0,
+    34.0
+   ],
+   "seasonDays": [
+    210.0,
+    300.0
+   ],
+   "seasonMonths": 8,
+   "killC": -5.0,
+   "rain": [
+    800.0,
+    1000.0,
+    2000.0,
+    4800.0
+   ],
+   "ph": [
+    4.5,
+    5.0,
+    6.5,
+    7.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     1
+    ],
+    "absolute": [
+     1,
+     2
+    ]
+   },
+   "texture": {
+    "optimal": "MH",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  },
+  {
+   "id": "kauri",
+   "name": "Kauri",
+   "localName": null,
+   "scientific": "Agathis australis",
+   "ecocropName": "Agathis australis (D. Don)",
+   "family": "Araucariaceae",
+   "temp": [
+    5.0,
+    14.0,
+    24.0,
+    32.0
+   ],
+   "seasonDays": [
+    150.0,
+    240.0
+   ],
+   "seasonMonths": 6,
+   "killC": -17.0,
+   "rain": [
+    1000.0,
+    1200.0,
+    1600.0,
+    2000.0
+   ],
+   "ph": [
+    4.5,
+    4.8,
+    5.5,
+    6.5
+   ],
+   "light": {
+    "optimal": [
+     1,
+     2
+    ],
+    "absolute": [
+     1,
+     3
+    ]
+   },
+   "texture": {
+    "optimal": "LM",
+    "absolute": "LMH"
+   },
+   "drainage": [
+    "W"
+   ]
+  }
+ ]
+}

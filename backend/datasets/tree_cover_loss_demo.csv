@@ -1,0 +1,73 @@
+place,half_width_km,tree_cover_loss_year,natural_forests_class,area_ha,carbon_emissions_MgCO2e,aoi_id,aoi_type
+joshimath,10,2021,Unknown,0.19927407377566975,0,export-joshimath,feature_collection
+joshimath,10,2021,Natural Forest,0.06648277101730811,21.026994705200195,export-joshimath,feature_collection
+joshimath,10,2021,Non-natural Forest,0,0,export-joshimath,feature_collection
+joshimath,10,2022,Unknown,0,0,export-joshimath,feature_collection
+joshimath,10,2022,Natural Forest,0.13305472383365924,14.139643669128418,export-joshimath,feature_collection
+joshimath,10,2022,Non-natural Forest,0,0,export-joshimath,feature_collection
+joshimath,10,2023,Unknown,0,0,export-joshimath,feature_collection
+joshimath,10,2023,Natural Forest,0.5986366779741256,313.55451107025146,export-joshimath,feature_collection
+joshimath,10,2023,Non-natural Forest,0.06652066228032805,54.27901840209961,export-joshimath,feature_collection
+joshimath,10,2024,Unknown,0,0,export-joshimath,feature_collection
+joshimath,10,2024,Natural Forest,0.06646279342616274,0,export-joshimath,feature_collection
+joshimath,10,2024,Non-natural Forest,0,0,export-joshimath,feature_collection
+uttarkashi,10,2021,Unknown,0,0,export-uttarkashi,feature_collection
+uttarkashi,10,2021,Natural Forest,0,0,export-uttarkashi,feature_collection
+uttarkashi,10,2021,Non-natural Forest,0.06639500504291782,40.046791076660156,export-uttarkashi,feature_collection
+uttarkashi,10,2022,Unknown,0.46459884096774634,93.70002746582031,export-uttarkashi,feature_collection
+uttarkashi,10,2022,Natural Forest,2.057451741165541,710.7102546691895,export-uttarkashi,feature_collection
+uttarkashi,10,2022,Non-natural Forest,0.929322504394257,380.9943046569824,export-uttarkashi,feature_collection
+uttarkashi,10,2023,Unknown,0.2655173065432005,36.70697021484375,export-uttarkashi,feature_collection
+uttarkashi,10,2023,Natural Forest,0.7299344952485816,119.79281616210938,export-uttarkashi,feature_collection
+uttarkashi,10,2023,Non-natural Forest,0.46454536310750455,241.24921417236328,export-uttarkashi,feature_collection
+uttarkashi,10,2024,Unknown,0.06636196172369117,0,export-uttarkashi,feature_collection
+uttarkashi,10,2024,Natural Forest,0.33191958672500704,58.47817039489746,export-uttarkashi,feature_collection
+uttarkashi,10,2024,Non-natural Forest,0,0,export-uttarkashi,feature_collection
+manaus,10,2021,Unknown,0.07682523716533828,35.46562957763672,export-manaus,feature_collection
+manaus,10,2021,Natural Forest,1.536354831145582,843.1097965240479,export-manaus,feature_collection
+manaus,10,2021,Non-natural Forest,0,0,export-manaus,feature_collection
+manaus,10,2022,Unknown,0.30729606710861884,120.5353889465332,export-manaus,feature_collection
+manaus,10,2022,Natural Forest,0.3072790389665294,105.90168762207031,export-manaus,feature_collection
+manaus,10,2022,Non-natural Forest,0,0,export-manaus,feature_collection
+manaus,10,2023,Unknown,1.843653587226505,511.47073459625244,export-manaus,feature_collection
+manaus,10,2023,Natural Forest,2.5350184270419702,1273.3056812286377,export-manaus,feature_collection
+manaus,10,2023,Non-natural Forest,0,0,export-manaus,feature_collection
+manaus,10,2024,Unknown,0.9986750467594249,431.1701354980469,export-manaus,feature_collection
+manaus,10,2024,Natural Forest,5.300268103772644,1697.62899684906,export-manaus,feature_collection
+manaus,10,2024,Non-natural Forest,0,0,export-manaus,feature_collection
+cologne,10,2021,Unknown,0.24397751145473418,169.68880653381348,export-cologne,feature_collection
+cologne,10,2021,Natural Forest,0,0,export-cologne,feature_collection
+cologne,10,2021,Non-natural Forest,0,0,export-cologne,feature_collection
+cologne,10,2022,Unknown,0,0,export-cologne,feature_collection
+cologne,10,2022,Natural Forest,0,0,export-cologne,feature_collection
+cologne,10,2022,Non-natural Forest,0,0,export-cologne,feature_collection
+cologne,10,2023,Unknown,0.24439379718606116,117.23685836791992,export-cologne,feature_collection
+cologne,10,2023,Natural Forest,0,0,export-cologne,feature_collection
+cologne,10,2023,Non-natural Forest,0,0,export-cologne,feature_collection
+cologne,10,2024,Unknown,0.04892113972323553,34.94123840332031,export-cologne,feature_collection
+cologne,10,2024,Natural Forest,0,0,export-cologne,feature_collection
+cologne,10,2024,Non-natural Forest,0,0,export-cologne,feature_collection
+derna,10,2021,Unknown,0,0,export-derna,feature_collection
+derna,10,2021,Natural Forest,0,0,export-derna,feature_collection
+derna,10,2021,Non-natural Forest,0,0,export-derna,feature_collection
+derna,10,2022,Unknown,0,0,export-derna,feature_collection
+derna,10,2022,Natural Forest,0,0,export-derna,feature_collection
+derna,10,2022,Non-natural Forest,0,0,export-derna,feature_collection
+derna,10,2023,Unknown,0.06500543067120589,0,export-derna,feature_collection
+derna,10,2023,Natural Forest,0,0,export-derna,feature_collection
+derna,10,2023,Non-natural Forest,0,0,export-derna,feature_collection
+derna,10,2024,Unknown,0.06494305535979242,0,export-derna,feature_collection
+derna,10,2024,Natural Forest,0,0,export-derna,feature_collection
+derna,10,2024,Non-natural Forest,0,0,export-derna,feature_collection
+sindh,10,2021,Unknown,0,0,export-sindh,feature_collection
+sindh,10,2021,Natural Forest,0,0,export-sindh,feature_collection
+sindh,10,2021,Non-natural Forest,0,0,export-sindh,feature_collection
+sindh,10,2022,Unknown,0,0,export-sindh,feature_collection
+sindh,10,2022,Natural Forest,0,0,export-sindh,feature_collection
+sindh,10,2022,Non-natural Forest,0,0,export-sindh,feature_collection
+sindh,10,2023,Unknown,0,0,export-sindh,feature_collection
+sindh,10,2023,Natural Forest,0,0,export-sindh,feature_collection
+sindh,10,2023,Non-natural Forest,0,0,export-sindh,feature_collection
+sindh,10,2024,Unknown,1.7985410061618978,0,export-sindh,feature_collection
+sindh,10,2024,Natural Forest,0,0,export-sindh,feature_collection
+sindh,10,2024,Non-natural Forest,0,0,export-sindh,feature_collection
