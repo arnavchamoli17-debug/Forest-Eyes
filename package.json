@@ -1,0 +1,14 @@
+{
+  "name": "earth-intelligence-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Forest Eyes + DATA: global environmental hazard screening with AI",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node --max-old-space-size=256 backend/server.js",
+    "export-datasets": "node backend/scripts/export-datasets.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
