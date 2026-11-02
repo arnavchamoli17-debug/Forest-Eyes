@@ -1,0 +1,27 @@
+# Render blueprint: one free Node web service running server.js (no npm packages needed).
+# Secrets are NOT stored here: Render asks for them when you create the service.
+services:
+  - type: web
+    name: earth-intelligence
+    runtime: node
+    plan: free
+    buildCommand: "true"
+    startCommand: npm start
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: GEMMA_MODELS
+        value: gemma-4-26b-a4b-it,gemma-4-31b-it
+      - key: GEMINI_FALLBACK_MODEL
+        value: gemini-3.5-flash,gemini-3.1-flash-lite
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GFW_API_KEY
+        sync: false
+      - key: BEDROCK_API_KEY
+        sync: false
+      - key: BEDROCK_REGION
+        value: us-east-1
+      - key: BEDROCK_MODEL_ID
+        sync: false
